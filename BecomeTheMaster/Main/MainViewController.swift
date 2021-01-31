@@ -12,8 +12,6 @@ import RxCocoa
 import Firebase
 import FirebaseAuth
 
-//Company Mac OS Push Test
-
 class MainViewController: BaseViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
