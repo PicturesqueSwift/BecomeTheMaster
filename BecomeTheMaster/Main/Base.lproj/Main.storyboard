@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rz7-MS-8nZ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="guu-TN-JUw">
+            <objects>
+                <tabBarController id="rz7-MS-8nZ" customClass="TabBarController" customModule="BecomeTheMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="nGr-cx-ObE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemTealColor"/>
+                        <color key="barTintColor" name="WhiteNBlack"/>
+                        <color key="selectedImageTintColor" name="SignatureNWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" name="Navi_TitleColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBar>
+                    <connections>
+                        <outlet property="mainTabBar" destination="nGr-cx-ObE" id="3er-eT-Ryo"/>
+                        <segue destination="qWW-ZL-9zZ" kind="relationship" relationship="viewControllers" id="hz9-PV-WTw"/>
+                        <segue destination="8We-4g-RrS" kind="relationship" relationship="viewControllers" id="iDy-ya-bF6"/>
+                        <segue destination="CLh-58-yEY" kind="relationship" relationship="viewControllers" id="jes-OK-zyG"/>
+                        <segue destination="cEk-oH-dnW" kind="relationship" relationship="viewControllers" id="Vnf-r2-7WH"/>
+                        <segue destination="vie-l8-qft" kind="relationship" relationship="viewControllers" id="3Uo-dt-IYA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4f0-Yd-k2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1320" y="94"/>
+        </scene>
+        <!--Follow-->
+        <scene sceneID="w7m-rC-3aL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Follow" id="8We-4g-RrS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="fzf-dH-Fk5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0te-9f-e2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1570" y="-268"/>
+        </scene>
+        <!--Messenger-->
+        <scene sceneID="HlF-n7-pYk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Messenger" id="CLh-58-yEY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="oWL-8Z-ysp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywp-mo-6dv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1408" y="-268"/>
+        </scene>
+        <!--Contract-->
+        <scene sceneID="me2-BY-0Sl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Contract" id="cEk-oH-dnW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="lBE-HA-kci"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pcn-Vs-fSM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1230" y="-268"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="ahB-fE-IVH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="vie-l8-qft" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="LFp-p8-H6v"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDR-G4-U1g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1074" y="-268"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NU8-c8-qln">
+            <objects>
+                <navigationController id="qWW-ZL-9zZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" selectedImage="house.fill" id="DOm-1n-a2d"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="A2N-Bh-lhp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="WhiteNBlack"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" name="SignatureNWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CuE-25-pqv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="986-J7-4x2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-394" y="-603"/>
+        </scene>
+        <!--청출어람-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="BecomeTheMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QbW-0y-EeK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i0q-Hk-9S6">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainCell" id="QPZ-Ae-Mzl" customClass="MainCell" customModule="BecomeTheMaster" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Psr-CQ-2gJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.2945897281" green="0.38321441410000001" blue="0.57615673540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QbW-0y-EeK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3KO-dO-k1e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QbW-0y-EeK" secondAttribute="trailing" id="JEf-vs-jQn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QbW-0y-EeK" secondAttribute="bottom" id="cqE-aQ-YKa"/>
+                            <constraint firstItem="QbW-0y-EeK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dfn-y7-1M5"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="link" catalog="system" selectedImage="link" id="Lvs-hp-YKH">
+                        <color key="badgeColor" systemColor="systemTealColor"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="청출어람" id="Rck-xV-qIX">
+                        <barButtonItem key="leftBarButtonItem" image="Main_Filter" id="4Fa-TJ-UW4">
+                            <color key="tintColor" name="SignatureNWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Main_Grid" springLoaded="YES" id="TTh-Vg-fWK">
+                            <color key="tintColor" name="SignatureNWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="QbW-0y-EeK" id="BAo-91-GHK"/>
+                        <outlet property="filterButton" destination="4Fa-TJ-UW4" id="4tt-Cc-qo2"/>
+                        <outlet property="gridButton" destination="TTh-Vg-fWK" id="J3c-ed-Ufn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-394" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Main_Filter" width="24" height="24"/>
+        <image name="Main_Grid" width="24" height="24"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="link" catalog="system" width="128" height="122"/>
+        <namedColor name="Navi_TitleColor">
+            <color red="0.29411764705882354" green="0.3843137254901961" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SignatureNWhite">
+            <color red="0.29411764705882354" green="0.3843137254901961" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhiteNBlack">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
