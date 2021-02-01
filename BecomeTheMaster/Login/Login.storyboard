@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zZG-rF-sJI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zZG-rF-sJI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -319,70 +319,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyZ-QZ-8BJ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eyZ-QZ-8BJ">
                                 <rect key="frame" x="30" y="30" width="354" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="4Aj-db-m2J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vu-M0-dIE">
-                                <rect key="frame" x="358" y="38" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="8Vu-M0-dIE" secondAttribute="height" multiplier="1:1" id="NZb-kD-GTu"/>
-                                    <constraint firstAttribute="width" constant="20" id="U81-wW-WFZ"/>
-                                </constraints>
-                                <state key="normal" image="Text_Cancel"/>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DSf-0I-m3U">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DSf-0I-m3U">
                                 <rect key="frame" x="30" y="82" width="354" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="03a-ob-jLC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2Y-aw-HUL">
-                                <rect key="frame" x="358" y="90" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="i2Y-aw-HUL" secondAttribute="height" multiplier="1:1" id="RCa-42-17o"/>
-                                    <constraint firstAttribute="width" constant="20" id="z9I-bU-v2d"/>
-                                </constraints>
-                                <state key="normal" image="Text_Cancel"/>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I2n-Ic-NBb">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="I2n-Ic-NBb">
                                 <rect key="frame" x="30" y="134" width="354" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="l0d-Rq-hwN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-ay-FP8">
-                                <rect key="frame" x="358" y="142" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="O3l-ay-FP8" secondAttribute="height" multiplier="1:1" id="7b2-xv-kXo"/>
-                                    <constraint firstAttribute="width" constant="20" id="dJ4-mZ-Qf5"/>
-                                </constraints>
-                                <state key="normal" image="Text_Cancel"/>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tTV-Fw-1ZF">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tTV-Fw-1ZF">
                                 <rect key="frame" x="30" y="186" width="354" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="5db-uP-wkO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1D-3X-emS">
-                                <rect key="frame" x="358" y="194" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="N1D-3X-emS" secondAttribute="height" multiplier="1:1" id="LSs-Lr-zhw"/>
-                                    <constraint firstAttribute="width" constant="20" id="mEC-hZ-79v"/>
-                                </constraints>
-                                <state key="normal" image="Text_Cancel"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxO-nD-F7W">
                                 <rect key="frame" x="30" y="704" width="354" height="40"/>
                                 <color key="backgroundColor" name="SignatureNWhite"/>
@@ -398,21 +366,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pqa-9p-y6z" firstAttribute="trailing" secondItem="DSf-0I-m3U" secondAttribute="trailing" constant="30" id="17j-36-PLA"/>
-                            <constraint firstItem="tTV-Fw-1ZF" firstAttribute="trailing" secondItem="N1D-3X-emS" secondAttribute="trailing" constant="6" id="361-UV-yGE"/>
-                            <constraint firstItem="I2n-Ic-NBb" firstAttribute="trailing" secondItem="O3l-ay-FP8" secondAttribute="trailing" constant="6" id="AaS-Pk-IQD"/>
                             <constraint firstItem="DSf-0I-m3U" firstAttribute="leading" secondItem="pqa-9p-y6z" secondAttribute="leading" constant="30" id="Cu3-HX-mM2"/>
                             <constraint firstItem="pqa-9p-y6z" firstAttribute="trailing" secondItem="I2n-Ic-NBb" secondAttribute="trailing" constant="30" id="DPo-Ix-raT"/>
-                            <constraint firstItem="8Vu-M0-dIE" firstAttribute="centerY" secondItem="eyZ-QZ-8BJ" secondAttribute="centerY" id="EbB-P8-BFy"/>
                             <constraint firstItem="pqa-9p-y6z" firstAttribute="trailing" secondItem="eyZ-QZ-8BJ" secondAttribute="trailing" constant="30" id="FVM-K3-RDo"/>
-                            <constraint firstItem="N1D-3X-emS" firstAttribute="centerY" secondItem="tTV-Fw-1ZF" secondAttribute="centerY" id="HSV-vU-Bj2"/>
                             <constraint firstItem="tTV-Fw-1ZF" firstAttribute="top" secondItem="I2n-Ic-NBb" secondAttribute="bottom" constant="16" id="Oxj-wu-IMP"/>
-                            <constraint firstItem="DSf-0I-m3U" firstAttribute="trailing" secondItem="i2Y-aw-HUL" secondAttribute="trailing" constant="6" id="bfs-Dv-Z47"/>
                             <constraint firstItem="FxO-nD-F7W" firstAttribute="leading" secondItem="pqa-9p-y6z" secondAttribute="leading" constant="30" id="d6I-rp-8g9"/>
-                            <constraint firstItem="i2Y-aw-HUL" firstAttribute="centerY" secondItem="DSf-0I-m3U" secondAttribute="centerY" id="dBk-Ny-Drm"/>
                             <constraint firstItem="pqa-9p-y6z" firstAttribute="bottom" secondItem="FxO-nD-F7W" secondAttribute="bottom" constant="30" id="fx2-t4-QMA"/>
                             <constraint firstItem="eyZ-QZ-8BJ" firstAttribute="top" secondItem="pqa-9p-y6z" secondAttribute="top" constant="30" id="i4p-L0-RIi"/>
-                            <constraint firstItem="eyZ-QZ-8BJ" firstAttribute="trailing" secondItem="8Vu-M0-dIE" secondAttribute="trailing" constant="6" id="jzL-tH-YQZ"/>
-                            <constraint firstItem="O3l-ay-FP8" firstAttribute="centerY" secondItem="I2n-Ic-NBb" secondAttribute="centerY" id="kji-4G-gub"/>
                             <constraint firstItem="I2n-Ic-NBb" firstAttribute="top" secondItem="DSf-0I-m3U" secondAttribute="bottom" constant="16" id="nwd-79-kwE"/>
                             <constraint firstItem="pqa-9p-y6z" firstAttribute="trailing" secondItem="FxO-nD-F7W" secondAttribute="trailing" constant="30" id="qD5-IL-zYj"/>
                             <constraint firstItem="DSf-0I-m3U" firstAttribute="top" secondItem="eyZ-QZ-8BJ" secondAttribute="bottom" constant="16" id="u3i-GU-28a"/>
@@ -432,12 +392,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="completeButton" destination="FxO-nD-F7W" id="qrZ-sO-6Q4"/>
-                        <outlet property="emailCancelButton" destination="8Vu-M0-dIE" id="LrN-h1-zWL"/>
                         <outlet property="emailTextField" destination="eyZ-QZ-8BJ" id="Kv6-Z3-X6J"/>
-                        <outlet property="nickNameCancelButton" destination="N1D-3X-emS" id="wSL-Fk-wXj"/>
                         <outlet property="nickNameTextField" destination="tTV-Fw-1ZF" id="12r-fr-M3R"/>
-                        <outlet property="pwdCancelButton" destination="i2Y-aw-HUL" id="C6q-NN-I1R"/>
-                        <outlet property="pwdCheckCancelButton" destination="O3l-ay-FP8" id="vtC-xN-kHK"/>
                         <outlet property="pwdCheckTextField" destination="I2n-Ic-NBb" id="En1-Ra-PSg"/>
                         <outlet property="pwdTextField" destination="DSf-0I-m3U" id="Szn-pV-KMa"/>
                     </connections>
@@ -456,7 +412,6 @@
         <image name="Navi_Close" width="20" height="20"/>
         <image name="SignUp_Mentee" width="128" height="128"/>
         <image name="SignUp_Mentor" width="128" height="128"/>
-        <image name="Text_Cancel" width="28" height="28"/>
         <namedColor name="Navi_TitleColor">
             <color red="0.29411764705882354" green="0.3843137254901961" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

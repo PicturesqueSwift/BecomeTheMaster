@@ -17,11 +17,6 @@ class SignUpViewController: BaseViewController, StoryboardView {
     @IBOutlet weak var pwdCheckTextField: UITextField!
     @IBOutlet weak var nickNameTextField: UITextField!
     
-    @IBOutlet weak var emailCancelButton: UIButton!
-    @IBOutlet weak var pwdCancelButton: UIButton!
-    @IBOutlet weak var pwdCheckCancelButton: UIButton!
-    @IBOutlet weak var nickNameCancelButton: UIButton!
-    
     @IBOutlet weak var completeButton: UIButton!
     
     var disposeBag = DisposeBag()
@@ -49,62 +44,28 @@ extension SignUpViewController {
     
     private func textFieldBind() {
         emailTextField.rx.text.orEmpty
-            .do(onNext: { [weak self] text in
-                self?.emailCancelButton.isHidden = text.isEmpty
-            }).subscribe(onNext: { text in
+            .subscribe(onNext: { text in
                 
             }).disposed(by: disposeBag)
         
         pwdTextField.rx.text.orEmpty
-            .do(onNext: { [weak self] text in
-                self?.pwdCancelButton.isHidden = text.isEmpty
-            }).subscribe(onNext: { text in
-                
+            .subscribe(onNext: { text in
+
             }).disposed(by: disposeBag)
         
         pwdCheckTextField.rx.text.orEmpty
-            .do(onNext: { [weak self] text in
-                self?.pwdCheckCancelButton.isHidden = text.isEmpty
-            }).subscribe(onNext: { text in
+            .subscribe(onNext: { text in
                 
             }).disposed(by: disposeBag)
         
         nickNameTextField.rx.text.orEmpty
-            .do(onNext: { [weak self] text in
-                self?.nickNameCancelButton.isHidden = text.isEmpty
-            }).subscribe(onNext: { text in
+            .subscribe(onNext: { text in
                 
             }).disposed(by: disposeBag)
-        
     }
     
     private func buttonBind() {
-        emailCancelButton.rx.tap
-            .do(onNext: { [weak self] _ in
-                self?.emailCancelButton.isHidden = true
-            })
-            .map{ _ in return "" }
-            .asDriver(onErrorJustReturn: "")
-            .drive(emailTextField.rx.text)
-            .disposed(by: disposeBag)
         
-        pwdCancelButton.rx.tap
-            .map{ _ in return "" }
-            .asDriver(onErrorJustReturn: "")
-            .drive(pwdTextField.rx.text)
-            .disposed(by: disposeBag)
-        
-        pwdCheckCancelButton.rx.tap
-            .map{ _ in return "" }
-            .asDriver(onErrorJustReturn: "")
-            .drive(pwdCheckTextField.rx.text)
-            .disposed(by: disposeBag)
-        
-        nickNameCancelButton.rx.tap
-            .map{ _ in return "" }
-            .asDriver(onErrorJustReturn: "")
-            .drive(nickNameTextField.rx.text)
-            .disposed(by: disposeBag)
     }
 }
 
