@@ -326,7 +326,7 @@
                                     <constraint firstAttribute="width" secondItem="NfS-iq-Qrk" secondAttribute="height" multiplier="1:1" id="lan-PZ-BeZ"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NNk-es-Yee" userLabel="Email Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="NNk-es-Yee" userLabel="Email Stack View">
                                 <rect key="frame" x="30" y="138" width="354" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eyZ-QZ-8BJ">
@@ -337,15 +337,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAn-ML-9Zr">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAn-ML-9Zr" customClass="PaddingLabel" customModule="BecomeTheMaster" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="inset">
+                                                <size key="value" width="4" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j7x-pq-4p0" userLabel="PWD Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="j7x-pq-4p0" userLabel="PWD Stack View">
                                 <rect key="frame" x="30" y="184" width="354" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oCW-hd-arc">
@@ -356,15 +361,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZp-GJ-xAg">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZp-GJ-xAg" customClass="PaddingLabel" customModule="BecomeTheMaster" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="inset">
+                                                <size key="value" width="4" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ecI-ay-dnu" userLabel="PWD Check Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ecI-ay-dnu" userLabel="PWD Check Stack View">
                                 <rect key="frame" x="30" y="230" width="354" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oRM-O7-5GH">
@@ -375,15 +385,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdh-DX-rcG">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdh-DX-rcG" customClass="PaddingLabel" customModule="BecomeTheMaster" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="inset">
+                                                <size key="value" width="4" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IF6-gs-O67" userLabel="Nickname Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="IF6-gs-O67" userLabel="Nickname Stack View">
                                 <rect key="frame" x="30" y="276" width="354" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LOW-JC-eqh">
@@ -394,11 +409,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vN-OG-Pnv">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vN-OG-Pnv" customClass="PaddingLabel" customModule="BecomeTheMaster" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="inset">
+                                                <size key="value" width="4" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                             </stackView>
@@ -455,15 +475,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="completeButton" destination="FxO-nD-F7W" id="qrZ-sO-6Q4"/>
-                        <outlet property="emailLabel" destination="ZAn-ML-9Zr" id="viy-lB-6ug"/>
+                        <outlet property="emailAlertLabel" destination="ZAn-ML-9Zr" id="me7-H9-A4e"/>
                         <outlet property="emailTextField" destination="eyZ-QZ-8BJ" id="JS9-lz-IaA"/>
+                        <outlet property="nickNameAlertLabel" destination="9vN-OG-Pnv" id="f8w-QD-rYt"/>
                         <outlet property="nickNameTextField" destination="LOW-JC-eqh" id="KaQ-jG-KeZ"/>
-                        <outlet property="nicknameLabel" destination="9vN-OG-Pnv" id="z0b-5c-rjE"/>
                         <outlet property="profileButton" destination="f4q-6E-IEE" id="ig4-XF-res"/>
                         <outlet property="profileImage" destination="NfS-iq-Qrk" id="9rt-rH-IBC"/>
-                        <outlet property="pwdCheckLabel" destination="mdh-DX-rcG" id="aFN-XI-Ynh"/>
+                        <outlet property="pwdAlertLabel" destination="vZp-GJ-xAg" id="vVr-Ko-1cL"/>
+                        <outlet property="pwdCheckAlertLabel" destination="mdh-DX-rcG" id="uPo-sf-cp1"/>
                         <outlet property="pwdCheckTextField" destination="oRM-O7-5GH" id="MlI-Oy-M03"/>
-                        <outlet property="pwdLabel" destination="vZp-GJ-xAg" id="SWk-oV-0BK"/>
                         <outlet property="pwdTextField" destination="oCW-hd-arc" id="q7o-Im-9mO"/>
                     </connections>
                 </viewController>
@@ -472,6 +492,12 @@
             <point key="canvasLocation" x="1205.7971014492755" y="806.91964285714278"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="9vN-OG-Pnv"/>
+        <designable name="ZAn-ML-9Zr"/>
+        <designable name="mdh-DX-rcG"/>
+        <designable name="vZp-GJ-xAg"/>
+    </designables>
     <resources>
         <image name="Login_FaceBook" width="32" height="32"/>
         <image name="Login_Google" width="32" height="32"/>
