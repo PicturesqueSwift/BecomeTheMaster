@@ -51,7 +51,12 @@ extension SignUpViewController {
             .bind(to: emailAlertLabel.rx.text)
             .disposed(by: disposeBag)
         
-        
+        reactor.state // 닉네임
+            .do(onNext: { [weak self] _ in self?.nickNameAlertLabel.isHidden = !reactor.isNickNameAlert })
+            .filter { _ in reactor.isNickNameAlert }
+            .map { $0.nicknameAlertText }
+            .bind(to: nickNameAlertLabel.rx.text)
+            .disposed(by: disposeBag)
             
             
     }

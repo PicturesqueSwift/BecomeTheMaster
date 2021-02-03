@@ -23,13 +23,16 @@ class SignUpReactor: Reactor {
     
     enum Mutation {
         case isEmailAlert(_ alertMsg: String)
+        case isNickNameAlert(_ alertMsg: String)
     }
     
     struct State {
         var emailAlertText: String = ""
+        var nicknameAlertText: String = ""
     }
     
     var isEmailAlert: Bool = false
+    var isNickNameAlert: Bool = false
     
 }
 
@@ -43,7 +46,7 @@ extension SignUpReactor {
         case let .pwdCheckEdited(passwordCheck):
             return Observable.empty()
         case let .nicknameEdited(nickname):
-            return Observable.empty()
+            return Observable.just(Mutation.isNickNameAlert(nickname))
         }
     }
     
@@ -55,6 +58,9 @@ extension SignUpReactor {
             returnState.emailAlertText = "이메일 형식이 맞지 않습니다."
             isEmailAlert = !alertMsg.isEmpty
             
+        case let .isNickNameAlert(alertMsg):
+            returnState.nicknameAlertText = "닉네임이 중복됩니다."
+            isNickNameAlert = !alertMsg.isEmpty
         }
         
         return returnState
