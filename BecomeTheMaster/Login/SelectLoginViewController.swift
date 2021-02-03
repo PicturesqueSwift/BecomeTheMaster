@@ -22,6 +22,8 @@ class SelectLoginViewController: BaseViewController {
     @IBOutlet weak var emailSignUpButton: UIButton!
     @IBOutlet weak var lookAroundButton: UIButton!
     
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initializedConfigure()

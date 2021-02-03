@@ -15,22 +15,22 @@ class SignUpViewController: BaseViewController, StoryboardView {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var emailAlertLabel: PaddingLabel!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var pwdTextField: UITextField!
-    @IBOutlet weak var pwdAlertLabel: PaddingLabel!
+    @IBOutlet weak var pwdLabel: UILabel!
     @IBOutlet weak var pwdCheckTextField: UITextField!
-    @IBOutlet weak var pwdCheckAlertLabel: PaddingLabel!
+    @IBOutlet weak var pwdCheckLabel: UILabel!
     @IBOutlet weak var nickNameTextField: UITextField!
-    @IBOutlet weak var nickNameAlertLabel: PaddingLabel!
-    
+    @IBOutlet weak var nicknameLabel: UILabel!
     
     @IBOutlet weak var completeButton: UIButton!
+    
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializedConfigure()
-        reactorBind()
         
     }
     
@@ -43,42 +43,28 @@ class SignUpViewController: BaseViewController, StoryboardView {
 extension SignUpViewController {
     
     func bind(reactor: SignUpReactor) {
-        
-        reactor.state // 이메일
-            .do(onNext: { [weak self] _ in self?.emailAlertLabel.isHidden = !reactor.isEmailAlert })
-            .filter { _ in reactor.isEmailAlert }
-            .map { $0.emailAlertText }
-            .bind(to: emailAlertLabel.rx.text)
-            .disposed(by: disposeBag)
-        
-        
-            
-            
-    }
-    
-    private func reactorBind() {
-        guard let reactor = reactor else { return }
-        
         emailTextField.rx.text.orEmpty
-            .map { Reactor.Action.emailEdited($0) }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
+            .subscribe(onNext: { text in
+                
+            }).disposed(by: disposeBag)
         
         pwdTextField.rx.text.orEmpty
-            .map { Reactor.Action.pwdEdited($0) }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
+            .subscribe(onNext: { text in
+
+            }).disposed(by: disposeBag)
         
         pwdCheckTextField.rx.text.orEmpty
-            .map { Reactor.Action.pwdCheckEdited($0) }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
+            .subscribe(onNext: { text in
+                
+            }).disposed(by: disposeBag)
         
         nickNameTextField.rx.controlEvent(.editingDidEnd)
-            .withLatestFrom(nickNameTextField.rx.text.orEmpty)
-            .map { Reactor.Action.nicknameEdited($0) }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
+            .withLatestFrom(nickNameTextField.rx.text)
+            .subscribe(onNext: { text in
+                DEBUG_LOG("Nickname editing is end: \(text)")
+            }).disposed(by: disposeBag)
+
+
     }
     
 }
