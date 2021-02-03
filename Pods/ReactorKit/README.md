@@ -323,32 +323,22 @@ func testIsBookmarked() {
 }
 ```
 
-Sometimes a state is changed more than one time for a single action. For example, a `.refresh` action sets `state.isLoading` to `true` at first and sets to `false` after the refreshing. In this case it's difficult to test `state.isLoading` with `currentState` so you might need to use [RxTest](https://github.com/ReactiveX/RxSwift) or [RxExpect](https://github.com/devxoul/RxExpect). Here is an example test case using RxSwift:
+Sometimes a state is changed more than one time for a single action. For example, a `.refresh` action sets `state.isLoading` to `true` at first and sets to `false` after the refreshing. In this case it's difficult to test `state.isLoading` with `currentState` so you might need to use [RxTest](https://github.com/ReactiveX/RxSwift) or [RxExpect](https://github.com/devxoul/RxExpect). Here is an example test case using RxExpect:
 
 ```swift
 func testIsLoading() {
-  // given
-  let scheduler = TestScheduler(initialClock: 0)
-  let reactor = MyReactor()
-  let disposeBag = DisposeBag()
-
-  // when
-  scheduler
-    .createHotObservable([
-      .next(100, .refresh) // send .refresh at 100 scheduler time
+  RxExpect("it should change isLoading") { test in
+    let reactor = test.retain(MyReactor())
+    test.input(reactor.action, [
+      next(100, .refresh) // send .refresh at 100 scheduler time
     ])
-    .subscribe(reactor.action)
-    .disposed(by: disposeBag)
-
-  // then
-  let response = scheduler.start(created: 0, subscribed: 0, disposed: 1000) {
-    reactor.state.map(\.isLoading)
+    test.assert(reactor.state.map { $0.isLoading })
+      .since(100) // values since 100 scheduler time
+      .assert([
+        true,  // just after .refresh
+        false, // after refreshing
+      ])
   }
-  XCTAssertEqual(response.events.map(\.value.element), [
-    false, // initial state
-    true,  // just after .refresh
-    false  // after refreshing
-  ])
 }
 ```
 

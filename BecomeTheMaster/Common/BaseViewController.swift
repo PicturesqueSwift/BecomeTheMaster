@@ -11,8 +11,6 @@ import RxSwift
 
 class BaseViewController: UIViewController, ViewControllerFromStoryboard {
 
-    var disposeBag: DisposeBag = DisposeBag()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initializedNavigation()

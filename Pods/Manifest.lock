@@ -1,5 +1,5 @@
 PODS:
-  - Differentiator (5.0.0)
+  - Differentiator (4.0.1)
   - Firebase (7.5.0):
     - Firebase/Core (= 7.5.0)
   - Firebase/Auth (7.5.0):
@@ -85,26 +85,20 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
-  - PryntTrimmerView (4.0.2)
-  - ReactorKit (3.0.0):
-    - RxSwift (~> 6.0)
+  - ReactorKit (2.1.1):
+    - RxSwift (~> 5.0)
     - WeakMapTable (~> 1.1)
-  - RxCocoa (6.0.0):
-    - RxRelay (= 6.0.0)
-    - RxSwift (= 6.0.0)
-  - RxDataSources (5.0.0):
-    - Differentiator (~> 5.0)
-    - RxCocoa (~> 6.0)
-    - RxSwift (~> 6.0)
-  - RxRelay (6.0.0):
-    - RxSwift (= 6.0.0)
-  - RxSwift (6.0.0)
-  - SteviaLayout (4.7.3)
-  - Toaster (2.3.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
   - WeakMapTable (1.2.0)
-  - YPImagePicker (4.4.0):
-    - PryntTrimmerView (~> 4.0.2)
-    - SteviaLayout (~> 4.7.3)
 
 DEPENDENCIES:
   - Firebase
@@ -116,8 +110,6 @@ DEPENDENCIES:
   - RxCocoa
   - RxDataSources
   - RxSwift
-  - Toaster
-  - YPImagePicker
 
 SPEC REPOS:
   trunk:
@@ -137,19 +129,15 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
-    - PryntTrimmerView
     - ReactorKit
     - RxCocoa
     - RxDataSources
     - RxRelay
     - RxSwift
-    - SteviaLayout
-    - Toaster
     - WeakMapTable
-    - YPImagePicker
 
 SPEC CHECKSUMS:
-  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Firebase: fd5e4d2b756292c6e7ee6faac1eb320225d6e97e
   FirebaseAnalytics: 00b7f74571d346ee1ffb9bf0a2e6f2ffff222bcc
   FirebaseAuth: 13585612f93d671962682007ea8ded1d60ef0762
@@ -165,17 +153,13 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
-  PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
-  ReactorKit: 5348c9881dcb546605b451e32759dccc9937d36e
-  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
-  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
-  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
-  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
-  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
-  Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
+  ReactorKit: 6d894a20c3d508344320901cd8e386fde92df4b6
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
-  YPImagePicker: 15aed8bcaa4dad976e11b6114126d731a2f9f3c9
 
-PODFILE CHECKSUM: 095f788986598991ee19b62eb3dbaa6d13eea7fd
+PODFILE CHECKSUM: 2a58406f440ba0d664ab386e68b510e5236ed821
 
 COCOAPODS: 1.10.1
