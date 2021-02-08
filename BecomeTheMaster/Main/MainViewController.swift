@@ -20,8 +20,6 @@ class MainViewController: BaseViewController {
     
 //    let auth = Auth.auth()
     
-    var disposeBag = DisposeBag()
-    
     var width: CGFloat = 0
     
     override func viewDidLoad() {

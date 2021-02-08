@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA3BCEF725C7D7CE00687DC9 /* UITextField+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3BCEF625C7D7CE00687DC9 /* UITextField+Rx.swift */; };
+		DA65D73425CA36A800238A26 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65D73325CA36A800238A26 /* String+Ex.swift */; };
+		DA65D73F25CA563300238A26 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65D73A25CA4FEF00238A26 /* PaddingLabel.swift */; };
 		E0EE75976545B0980528259A /* Pods_BecomeTheMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFD17F57A0C30942D973B2A /* Pods_BecomeTheMaster.framework */; };
 		FF6681EB25C53AD60041E617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6681EA25C53AD60041E617 /* AppDelegate.swift */; };
 		FF6681F725C53AD70041E617 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6681F525C53AD70041E617 /* LaunchScreen.storyboard */; };
@@ -46,6 +49,9 @@
 /* Begin PBXFileReference section */
 		082A6ED58E80D09E1F6826E8 /* Pods-BecomeTheMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BecomeTheMaster.release.xcconfig"; path = "Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster.release.xcconfig"; sourceTree = "<group>"; };
 		7AFD17F57A0C30942D973B2A /* Pods_BecomeTheMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BecomeTheMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA3BCEF625C7D7CE00687DC9 /* UITextField+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Rx.swift"; sourceTree = "<group>"; };
+		DA65D73325CA36A800238A26 /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
+		DA65D73A25CA4FEF00238A26 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		F61AABABEF3EDE1B57906FFC /* Pods-BecomeTheMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BecomeTheMaster.debug.xcconfig"; path = "Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		FF6681E725C53AD60041E617 /* BecomeTheMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BecomeTheMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6681EA25C53AD60041E617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DA3BCEF425C7D78200687DC9 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				FF98943325C655B20021F8AF /* Auth+Rx.swift */,
+				FF98943625C655B30021F8AF /* Storage+Rx.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		DA3BCEF525C7D79900687DC9 /* Reactive */ = {
+			isa = PBXGroup;
+			children = (
+				DA3BCEF425C7D78200687DC9 /* Firebase */,
+				DA3BCEF625C7D7CE00687DC9 /* UITextField+Rx.swift */,
+			);
+			path = Reactive;
+			sourceTree = "<group>";
+		};
+		DA3CF63C25C7959800918767 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		DA3CF63D25C795AC00918767 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EEA1AE4DFE1E071AA868FBE2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,16 +173,17 @@
 			isa = PBXGroup;
 			children = (
 				FF98943025C655B20021F8AF /* API */,
-				FF98944A25C655B30021F8AF /* Common */,
-				FF98944425C655B30021F8AF /* Contract */,
+				DA3BCEF525C7D79900687DC9 /* Reactive */,
 				FF98943225C655B20021F8AF /* Extensions */,
-				FF98943925C655B30021F8AF /* Follow */,
+				FF98944725C655B30021F8AF /* Utillity */,
+				FF98944A25C655B30021F8AF /* Common */,
+				DA3CF63C25C7959800918767 /* Manager */,
 				FF98943C25C655B30021F8AF /* Login */,
 				FF98942125C655B20021F8AF /* Main */,
-				FF98942925C655B20021F8AF /* Manager */,
 				FF98942A25C655B20021F8AF /* Messenger */,
+				FF98944425C655B30021F8AF /* Contract */,
+				FF98943925C655B30021F8AF /* Follow */,
 				FF98942D25C655B20021F8AF /* Setting */,
-				FF98944725C655B30021F8AF /* Utillity */,
 				FF6681EA25C53AD60041E617 /* AppDelegate.swift */,
 				FF6681F525C53AD70041E617 /* LaunchScreen.storyboard */,
 				FF9893FD25C654890021F8AF /* Assets.xcassets */,
@@ -158,8 +197,8 @@
 		FF98942125C655B20021F8AF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DA3CF63D25C795AC00918767 /* Model */,
 				FF98942525C655B20021F8AF /* Cell */,
-				FF98942725C655B20021F8AF /* Model */,
 				FF98942325C655B20021F8AF /* Main.storyboard */,
 				FF98942225C655B20021F8AF /* MainViewController.swift */,
 				FF98942825C655B20021F8AF /* TabBarController.swift */,
@@ -173,20 +212,6 @@
 				FF98942625C655B20021F8AF /* MainCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		FF98942725C655B20021F8AF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		FF98942925C655B20021F8AF /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		FF98942A25C655B20021F8AF /* Messenger */ = {
@@ -218,12 +243,11 @@
 		FF98943225C655B20021F8AF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FF98943325C655B20021F8AF /* Auth+Rx.swift */,
-				FF98943425C655B20021F8AF /* UIViewController+Ex.swift */,
-				FF98943525C655B30021F8AF /* UIColor+Ex.swift */,
-				FF98943625C655B30021F8AF /* Storage+Rx.swift */,
-				FF98943725C655B30021F8AF /* CALayer+Ex.swift */,
 				FF98943825C655B30021F8AF /* UIApplication+Ex.swift */,
+				FF98943425C655B20021F8AF /* UIViewController+Ex.swift */,
+				FF98943725C655B30021F8AF /* CALayer+Ex.swift */,
+				FF98943525C655B30021F8AF /* UIColor+Ex.swift */,
+				DA65D73325CA36A800238A26 /* String+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -240,12 +264,12 @@
 		FF98943C25C655B30021F8AF /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FF98943D25C655B30021F8AF /* SignUpViewController.swift */,
+				FF98944225C655B30021F8AF /* Reactor */,
 				FF98943E25C655B30021F8AF /* Login.storyboard */,
+				FF98943D25C655B30021F8AF /* SignUpViewController.swift */,
 				FF98943F25C655B30021F8AF /* LoginViewController.swift */,
 				FF98944025C655B30021F8AF /* SelectUserTypeViewController.swift */,
 				FF98944125C655B30021F8AF /* SelectLoginViewController.swift */,
-				FF98944225C655B30021F8AF /* Reactor */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -280,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				FF98944B25C655B30021F8AF /* BaseViewController.swift */,
+				DA65D73A25CA4FEF00238A26 /* PaddingLabel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -295,7 +320,7 @@
 				FF6681E325C53AD60041E617 /* Sources */,
 				FF6681E425C53AD60041E617 /* Frameworks */,
 				FF6681E525C53AD60041E617 /* Resources */,
-				0BC84CB60969C60AABAE06F4 /* [CP] Embed Pods Frameworks */,
+				C4D8F9C669A3E148A5E810F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -359,23 +384,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0BC84CB60969C60AABAE06F4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		51BCC41D3886CAC05CDFF891 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,6 +406,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C4D8F9C669A3E148A5E810F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -415,7 +440,9 @@
 				FF98944F25C655B30021F8AF /* TabBarController.swift in Sources */,
 				FF98946625C655B30021F8AF /* Utils.swift in Sources */,
 				FF98946225C655B30021F8AF /* SignUpReactor.swift in Sources */,
+				DA65D73F25CA563300238A26 /* PaddingLabel.swift in Sources */,
 				FF98946325C655B30021F8AF /* ContractViewController.swift in Sources */,
+				DA65D73425CA36A800238A26 /* String+Ex.swift in Sources */,
 				FF98945A25C655B30021F8AF /* UIApplication+Ex.swift in Sources */,
 				FF98944C25C655B30021F8AF /* MainViewController.swift in Sources */,
 				FF98945425C655B30021F8AF /* Router.swift in Sources */,
@@ -424,6 +451,7 @@
 				FF98944E25C655B30021F8AF /* MainCell.swift in Sources */,
 				FF98945025C655B30021F8AF /* MessengerViewController.swift in Sources */,
 				FF98945F25C655B30021F8AF /* LoginViewController.swift in Sources */,
+				DA3BCEF725C7D7CE00687DC9 /* UITextField+Rx.swift in Sources */,
 				FF98945225C655B30021F8AF /* SettingViewController.swift in Sources */,
 				FF98945525C655B30021F8AF /* Auth+Rx.swift in Sources */,
 				FF98946125C655B30021F8AF /* SelectLoginViewController.swift in Sources */,
