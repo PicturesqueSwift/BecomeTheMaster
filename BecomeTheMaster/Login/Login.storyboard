@@ -42,7 +42,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Hix-md-DaJ"/>
                                         </constraints>
-                                        <color key="textColor" name="Navi_TitleColor"/>
+                                        <color key="textColor" name="BlackNWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
@@ -51,18 +51,19 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="zA5-DX-ZxZ"/>
                                         </constraints>
-                                        <color key="textColor" name="Navi_TitleColor"/>
+                                        <color key="textColor" name="BlackNWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cv-si-Glg">
                                         <rect key="frame" x="0.0" y="100" width="334" height="40"/>
+                                        <color key="backgroundColor" name="SignatureNWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="IAN-Mh-Z9r"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Login">
-                                            <color key="titleColor" name="SignatureNWhite"/>
+                                            <color key="titleColor" name="WhiteNSignature"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -509,8 +510,8 @@
         <image name="SignUp_Mentee" width="128" height="128"/>
         <image name="SignUp_Mentor" width="128" height="128"/>
         <image name="User_Guest" width="25" height="25"/>
-        <namedColor name="Navi_TitleColor">
-            <color red="0.29411764705882354" green="0.3843137254901961" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BlackNWhite">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SignatureNWhite">
             <color red="0.29411764705882354" green="0.3843137254901961" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

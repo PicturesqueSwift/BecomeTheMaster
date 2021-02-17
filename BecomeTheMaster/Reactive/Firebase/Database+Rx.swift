@@ -23,7 +23,7 @@ extension Reactive where Base: DatabaseReference {
         
         return Observable.create { observer in
             
-            FirebaseManager.shared.dbRef.child("user_information").updateChildValues(["mentor":userDict]) { (error, ref) in
+            self.base.child("user_information").updateChildValues(["mentor":userDict]) { (error, ref) in
                 if let error = error {
                     DEBUG_LOG("Database User Information updateChildValues: \(error.localizedDescription)")
                     observer.onError(error)

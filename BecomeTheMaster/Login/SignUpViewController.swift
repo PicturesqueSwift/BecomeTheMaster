@@ -72,6 +72,12 @@ extension SignUpViewController {
                 self?.completeButton.backgroundColor = UIColor(named: "SignatureNWhite")
             }).disposed(by: disposeBag)
         
+        reactor.state
+            .filter { $0.completedSignUp }
+            .subscribe(onNext: { [weak self] _ in
+                self?.dismiss(animated: true, completion: nil)
+            }).disposed(by: disposeBag)
+        
     }
     
     private func bindToReactor() {
