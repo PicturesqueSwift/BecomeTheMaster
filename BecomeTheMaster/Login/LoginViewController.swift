@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Toaster
 
 class LoginViewController: BaseViewController {
 
@@ -18,6 +19,7 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializedConfigure()
+        bind()
     }
     
     @IBAction func closeButton(_ sender: Any) {
@@ -26,7 +28,21 @@ class LoginViewController: BaseViewController {
 }
 
 extension LoginViewController {
-    func initializedConfigure() {
+    private func bind() {
+        
+        loginButton.rx.tap
+            .withLatestFrom(emailTextField.rx.text.orEmpty)
+            .withLatestFrom(pwdTextField.rx.text.orEmpty) {($0,$1)}
+            .flatMap { (email, password) -> Observable<Bool> in
+                return FirebaseManager.shared.auth.rx.signIn(email: email, password: password)
+            }.filter { $0 }
+            .subscribe(onNext: { [weak self] _ in
+                //self?.navigationController?.popToRootViewController(animated: true)
+                self?.presentingViewController?.dismiss(animated: true, completion: nil)
+            }).disposed(by: disposeBag)
+    }
+    
+    private func initializedConfigure() {
         emailTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
         pwdTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
         loginButton.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)

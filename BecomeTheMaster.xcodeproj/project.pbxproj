@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA288FAC25DCA78C00B293B6 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA288FAB25DCA78C00B293B6 /* FirebaseManager.swift */; };
+		DA288FAF25DCAE5A00B293B6 /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA288FAE25DCAE5A00B293B6 /* PhotoManager.swift */; };
+		DA288FB225DCAF4800B293B6 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA288FB125DCAF4800B293B6 /* UIImage+Ex.swift */; };
+		DA288FD325DCD87900B293B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA288FD225DCD87900B293B6 /* GoogleService-Info.plist */; };
+		DA28908325DCEFC400B293B6 /* Database+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA28908225DCEFC400B293B6 /* Database+Rx.swift */; };
 		DA3BCEF725C7D7CE00687DC9 /* UITextField+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3BCEF625C7D7CE00687DC9 /* UITextField+Rx.swift */; };
 		DA65D73425CA36A800238A26 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65D73325CA36A800238A26 /* String+Ex.swift */; };
 		DA65D73F25CA563300238A26 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65D73A25CA4FEF00238A26 /* PaddingLabel.swift */; };
+		DA72C39425DB4F3A0096ABC5 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA72C39325DB4F3A0096ABC5 /* Localized.strings */; };
 		E0EE75976545B0980528259A /* Pods_BecomeTheMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFD17F57A0C30942D973B2A /* Pods_BecomeTheMaster.framework */; };
 		FF6681EB25C53AD60041E617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6681EA25C53AD60041E617 /* AppDelegate.swift */; };
 		FF6681F725C53AD70041E617 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6681F525C53AD70041E617 /* LaunchScreen.storyboard */; };
@@ -43,15 +49,20 @@
 		FF98946525C655B30021F8AF /* ViewControllerFromStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF98944825C655B30021F8AF /* ViewControllerFromStoryboard.swift */; };
 		FF98946625C655B30021F8AF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF98944925C655B30021F8AF /* Utils.swift */; };
 		FF98946725C655B30021F8AF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF98944B25C655B30021F8AF /* BaseViewController.swift */; };
-		FF98946B25C656CF0021F8AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF98946A25C656CF0021F8AF /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		082A6ED58E80D09E1F6826E8 /* Pods-BecomeTheMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BecomeTheMaster.release.xcconfig"; path = "Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster.release.xcconfig"; sourceTree = "<group>"; };
 		7AFD17F57A0C30942D973B2A /* Pods_BecomeTheMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BecomeTheMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA288FAB25DCA78C00B293B6 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		DA288FAE25DCAE5A00B293B6 /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
+		DA288FB125DCAF4800B293B6 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
+		DA288FD225DCD87900B293B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA28908225DCEFC400B293B6 /* Database+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Database+Rx.swift"; sourceTree = "<group>"; };
 		DA3BCEF625C7D7CE00687DC9 /* UITextField+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Rx.swift"; sourceTree = "<group>"; };
 		DA65D73325CA36A800238A26 /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		DA65D73A25CA4FEF00238A26 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		DA72C39325DB4F3A0096ABC5 /* Localized.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localized.strings; sourceTree = "<group>"; };
 		F61AABABEF3EDE1B57906FFC /* Pods-BecomeTheMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BecomeTheMaster.debug.xcconfig"; path = "Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		FF6681E725C53AD60041E617 /* BecomeTheMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BecomeTheMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6681EA25C53AD60041E617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +98,6 @@
 		FF98944825C655B30021F8AF /* ViewControllerFromStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFromStoryboard.swift; sourceTree = "<group>"; };
 		FF98944925C655B30021F8AF /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FF98944B25C655B30021F8AF /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		FF98946A25C656CF0021F8AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,11 +120,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DA28908625DCF3DD00B293B6 /* CommonModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommonModel;
+			sourceTree = "<group>";
+		};
 		DA3BCEF425C7D78200687DC9 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
 				FF98943325C655B20021F8AF /* Auth+Rx.swift */,
 				FF98943625C655B30021F8AF /* Storage+Rx.swift */,
+				DA28908225DCEFC400B293B6 /* Database+Rx.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -122,8 +140,8 @@
 		DA3BCEF525C7D79900687DC9 /* Reactive */ = {
 			isa = PBXGroup;
 			children = (
-				DA3BCEF425C7D78200687DC9 /* Firebase */,
 				DA3BCEF625C7D7CE00687DC9 /* UITextField+Rx.swift */,
+				DA3BCEF425C7D78200687DC9 /* Firebase */,
 			);
 			path = Reactive;
 			sourceTree = "<group>";
@@ -131,6 +149,8 @@
 		DA3CF63C25C7959800918767 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				DA288FAB25DCA78C00B293B6 /* FirebaseManager.swift */,
+				DA288FAE25DCAE5A00B293B6 /* PhotoManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -172,11 +192,13 @@
 		FF6681E925C53AD60041E617 /* BecomeTheMaster */ = {
 			isa = PBXGroup;
 			children = (
+				DA72C39325DB4F3A0096ABC5 /* Localized.strings */,
 				FF98943025C655B20021F8AF /* API */,
 				DA3BCEF525C7D79900687DC9 /* Reactive */,
 				FF98943225C655B20021F8AF /* Extensions */,
 				FF98944725C655B30021F8AF /* Utillity */,
 				FF98944A25C655B30021F8AF /* Common */,
+				DA28908625DCF3DD00B293B6 /* CommonModel */,
 				DA3CF63C25C7959800918767 /* Manager */,
 				FF98943C25C655B30021F8AF /* Login */,
 				FF98942125C655B20021F8AF /* Main */,
@@ -189,7 +211,7 @@
 				FF9893FD25C654890021F8AF /* Assets.xcassets */,
 				FF9893FE25C654890021F8AF /* Color.xcassets */,
 				FF6681F825C53AD70041E617 /* Info.plist */,
-				FF98946A25C656CF0021F8AF /* GoogleService-Info.plist */,
+				DA288FD225DCD87900B293B6 /* GoogleService-Info.plist */,
 			);
 			path = BecomeTheMaster;
 			sourceTree = "<group>";
@@ -248,6 +270,7 @@
 				FF98943725C655B30021F8AF /* CALayer+Ex.swift */,
 				FF98943525C655B30021F8AF /* UIColor+Ex.swift */,
 				DA65D73325CA36A800238A26 /* String+Ex.swift */,
+				DA288FB125DCAF4800B293B6 /* UIImage+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -371,11 +394,12 @@
 				FF98945E25C655B30021F8AF /* Login.storyboard in Resources */,
 				FF98946425C655B30021F8AF /* Contract.storyboard in Resources */,
 				FF6681F725C53AD70041E617 /* LaunchScreen.storyboard in Resources */,
+				DA72C39425DB4F3A0096ABC5 /* Localized.strings in Resources */,
 				FF98945125C655B30021F8AF /* Messenger.storyboard in Resources */,
 				FF98940025C654890021F8AF /* Color.xcassets in Resources */,
 				FF9893FF25C654890021F8AF /* Assets.xcassets in Resources */,
 				FF98945C25C655B30021F8AF /* Follow.storyboard in Resources */,
-				FF98946B25C656CF0021F8AF /* GoogleService-Info.plist in Resources */,
+				DA288FD325DCD87900B293B6 /* GoogleService-Info.plist in Resources */,
 				FF98944D25C655B30021F8AF /* Main.storyboard in Resources */,
 				FF98945325C655B30021F8AF /* Setting.storyboard in Resources */,
 			);
@@ -430,9 +454,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA288FB225DCAF4800B293B6 /* UIImage+Ex.swift in Sources */,
 				FF6681EB25C53AD60041E617 /* AppDelegate.swift in Sources */,
 				FF98946025C655B30021F8AF /* SelectUserTypeViewController.swift in Sources */,
+				DA288FAF25DCAE5A00B293B6 /* PhotoManager.swift in Sources */,
 				FF98945625C655B30021F8AF /* UIViewController+Ex.swift in Sources */,
+				DA288FAC25DCA78C00B293B6 /* FirebaseManager.swift in Sources */,
 				FF98946725C655B30021F8AF /* BaseViewController.swift in Sources */,
 				FF98945825C655B30021F8AF /* Storage+Rx.swift in Sources */,
 				FF98945725C655B30021F8AF /* UIColor+Ex.swift in Sources */,
@@ -451,6 +478,7 @@
 				FF98944E25C655B30021F8AF /* MainCell.swift in Sources */,
 				FF98945025C655B30021F8AF /* MessengerViewController.swift in Sources */,
 				FF98945F25C655B30021F8AF /* LoginViewController.swift in Sources */,
+				DA28908325DCEFC400B293B6 /* Database+Rx.swift in Sources */,
 				DA3BCEF725C7D7CE00687DC9 /* UITextField+Rx.swift in Sources */,
 				FF98945225C655B30021F8AF /* SettingViewController.swift in Sources */,
 				FF98945525C655B30021F8AF /* Auth+Rx.swift in Sources */,

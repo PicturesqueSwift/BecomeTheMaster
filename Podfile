@@ -16,6 +16,7 @@ target 'BecomeTheMaster' do
   pod 'Firebase/Storage'
   pod 'Toaster'
   pod 'YPImagePicker'
+  pod 'Kingfisher'
 
   # Pods for BecomeTheMaster
 
