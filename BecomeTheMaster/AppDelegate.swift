@@ -18,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
+        //Exception Error Handler
+        NSSetUncaughtExceptionHandler { exception in
+            DEBUG_LOG("exception: \(exception)\nexception.reason: \(exception.reason ?? "")")
+           //DEBUG_LOG(exception.callStackSymbols)
+        }
+        
         return true
     }
 }

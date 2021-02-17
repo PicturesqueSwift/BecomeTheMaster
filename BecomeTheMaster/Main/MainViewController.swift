@@ -31,18 +31,6 @@ class MainViewController: BaseViewController {
         collectionView.reloadData()
         buttonBind()
         
-//        auth.rx.createUser(withEmail: "test", password: "test")
-//            .flatMap { (result) -> Observable<String> in
-//                guard let url = result.user.photoURL else { return Observable.empty() }
-//                let data = try Data(contentsOf: url)
-//                guard let image = UIImage(data: data) else { return Observable.empty() }
-//                return Storage.storage().rx.uploadProfileImage(profileImage: image)
-//            }.subscribe(onNext: { (profileURL) in
-//                print(profileURL)
-//            }, onError: { (err) in
-//                print(err)
-//            }).disposed(by: disposeBag)
-        
     }
 
 }

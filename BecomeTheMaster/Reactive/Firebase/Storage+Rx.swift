@@ -21,22 +21,26 @@ enum StorageName {
     case uid
 }
 
-extension Reactive where Base: Storage {
-    public func uploadProfileImage(profileImage: UIImage) -> Observable<String> {
-        guard let uploadData = profileImage.jpegData(compressionQuality: 1) else { return Observable.empty() } //changed from 0.3
+extension Reactive where Base: StorageReference {
+    public func uploadProfileImage(photoData: Data) -> Observable<String> {
+        guard photoData.count > 0 else { return Observable.empty() }
+        
         return Observable.create { obs in
             
             let storageRef = Storage.storage().reference().child("profile_images").child(NSUUID().uuidString)
 
-            storageRef.putData(uploadData, metadata: nil, completion: { (_, err) in
+            storageRef.putData(photoData, metadata: nil, completion: { (_, err) in
                 if let err = err {
+                    DEBUG_LOG("Storage Profile Image putData Failed: \(err.localizedDescription)")
                     obs.onError(err)
                 }
 
                 storageRef.downloadURL(completion: { (downloadURL, err) in
                     if let err = err {
+                        DEBUG_LOG("Storage Profile Image downloadURL Failed: \(err.localizedDescription)")
                         obs.onError(err)
                     } else if let profileImageUrl = downloadURL?.absoluteString {
+                        DEBUG_LOG("Storage Profile Image Upload Success")
                         obs.onNext(profileImageUrl)
                         obs.onCompleted()
                     }

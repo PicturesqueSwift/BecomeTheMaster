@@ -9,28 +9,34 @@
 import UIKit
 import RxSwift
 import ReactorKit
+import Kingfisher
 
 class SignUpViewController: BaseViewController, StoryboardView {
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileButton: UIButton!
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailAlertLabel: PaddingLabel!
+    
     @IBOutlet weak var pwdTextField: UITextField!
     @IBOutlet weak var pwdAlertLabel: PaddingLabel!
+    
     @IBOutlet weak var pwdCheckTextField: UITextField!
     @IBOutlet weak var pwdCheckAlertLabel: PaddingLabel!
+    
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var nickNameAlertLabel: PaddingLabel!
     
-    
     @IBOutlet weak var completeButton: UIButton!
+    
+    var photoModelSubject: BehaviorSubject<[PostPhotoModel]> = BehaviorSubject(value: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializedConfigure()
-        reactorBind()
+        bindToReactor()
         
     }
     
@@ -57,11 +63,18 @@ extension SignUpViewController {
             .map { $0.nicknameAlertText }
             .bind(to: nickNameAlertLabel.rx.text)
             .disposed(by: disposeBag)
-            
-            
+        
+        reactor.state
+            .filter { $0.doneEnable }
+            .map { $0.doneEnable }
+            .subscribe(onNext: { [weak self] isEnable in
+                self?.completeButton.isEnabled = isEnable
+                self?.completeButton.backgroundColor = UIColor(named: "SignatureNWhite")
+            }).disposed(by: disposeBag)
+        
     }
     
-    private func reactorBind() {
+    private func bindToReactor() {
         guard let reactor = reactor else { return }
         
         emailTextField.rx.text.orEmpty
@@ -84,6 +97,40 @@ extension SignUpViewController {
             .map { Reactor.Action.nicknameEdited($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
+        completeButton.rx.tap
+            .debounce(RxTimeInterval.seconds(2), scheduler: MainScheduler.asyncInstance)
+            .map { Reactor.Action.completedSignUp }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        profileButton.rx.tap
+            .debounce(RxTimeInterval.milliseconds(100), scheduler: MainScheduler.asyncInstance)
+            .subscribe(onNext: { _ in
+                PhotoManager.shared.photoModelSubject = self.photoModelSubject
+                PhotoManager.shared.showPicker(self, maxNumberOfItems: 1)
+            }).disposed(by: disposeBag)
+        
+        photoModelSubject.debug("Selected Profile Image")
+            .filter { $0.count > 0 }
+            .do(onNext: { [weak self] data in
+                let placeHolder = UIImage(named: "User_Guest")
+                let isGIFPhoto: Bool = data[0].url.absoluteString.contains("GIF")
+                
+                if isGIFPhoto {
+                    self?.profileImage.kf.setImage(with: data[0].url, placeholder: placeHolder, completionHandler: { result in
+                        switch result {
+                        case .success(_): break
+                        case .failure(_): self?.profileImage.image = UIImage(data: data[0].photoData)
+                        }
+                    })
+                } else {
+                    self?.profileImage.image = UIImage(data: data[0].photoData)
+                }
+            }).map { Reactor.Action.uploadProfileImage($0[0]) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
     }
     
 }
@@ -91,7 +138,10 @@ extension SignUpViewController {
 extension SignUpViewController {
     private func initializedConfigure() {
         self.reactor = SignUpReactor()
-        completeButton.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
+        
+        completeButton.isEnabled = false
+        completeButton.backgroundColor = UIColor.colorFromRGB(0x4b6293, alpha: 0.6)
+        completeButton.layer.addBasicBorder(color: .clear, width: 0.5, cornerRadius: 5)
         emailTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
         pwdTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
         pwdCheckTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
@@ -100,3 +150,4 @@ extension SignUpViewController {
         
     }
 }
+
