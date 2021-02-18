@@ -25,11 +25,14 @@ class BaseViewController: UIViewController, ViewControllerFromStoryboard {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    deinit{ DEBUG_LOG(String(describing: self)) }
 }
 
 extension BaseViewController: UIGestureRecognizerDelegate {
     private func initializedNavigation() {
         self.navigationController?.navigationItem.title = "청출어람"
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 17),
                                                                         .foregroundColor: UIColor.init(named: "SignatureNWhite")!]
