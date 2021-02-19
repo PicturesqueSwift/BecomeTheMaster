@@ -103,12 +103,168 @@
             </objects>
             <point key="canvasLocation" x="-394" y="-603"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Pan-67-nbu">
+            <objects>
+                <navigationController id="1HM-HC-0it" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="AGm-EX-d8a"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YhA-53-yZw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="N5d-9s-TzZ" kind="relationship" relationship="rootViewController" id="A6a-eh-fMf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O3J-1m-2rI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2284" y="94"/>
+        </scene>
+        <!--청출어람-->
+        <scene sceneID="CSU-am-YwF">
+            <objects>
+                <viewController storyboardIdentifier="MainFilterViewController" id="N5d-9s-TzZ" customClass="MainFilterViewController" customModule="BecomeTheMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Txw-rI-GKP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Avc-Q7-Opb">
+                                <rect key="frame" x="16" y="104" width="382" height="742"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8d-mB-UjM">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="별점 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDj-as-6lB">
+                                                <rect key="frame" x="6" y="6" width="59.5" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <color key="textColor" name="SignatureNWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XC6-94-zdN" customClass="CosmosView" customModule="Cosmos">
+                                                <rect key="frame" x="256" y="6" width="120" height="24"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                        <real key="value" value="24"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                        <color key="value" name="SignatureNWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                        <color key="value" red="0.29411764705882354" green="0.38431372549019605" blue="0.57647058823529407" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                        <color key="value" name="SignatureNWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                        <color key="value" red="0.29411764705882354" green="0.38431372549019605" blue="0.57647058823529407" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qv-9K-sw3">
+                                                <rect key="frame" x="6" y="36" width="370" height="38"/>
+                                                <subviews>
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="iaz-3P-gJD">
+                                                        <rect key="frame" x="0.0" y="17" width="370" height="4"/>
+                                                        <color key="progressTintColor" name="SignatureNWhite"/>
+                                                        <color key="trackTintColor" red="0.29411764709999999" green="0.38431372549999998" blue="0.57647058819999997" alpha="0.60677975169999998" colorSpace="calibratedRGB"/>
+                                                    </progressView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="iaz-3P-gJD" firstAttribute="centerY" secondItem="0qv-9K-sw3" secondAttribute="centerY" id="3fN-a4-aqe"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iaz-3P-gJD" secondAttribute="trailing" id="Z6V-Nc-or2"/>
+                                                    <constraint firstItem="iaz-3P-gJD" firstAttribute="leading" secondItem="0qv-9K-sw3" secondAttribute="leading" id="rIw-pb-APn"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="mDj-as-6lB" firstAttribute="top" secondItem="h8d-mB-UjM" secondAttribute="top" constant="6" id="3Mu-h7-Bgh"/>
+                                            <constraint firstItem="XC6-94-zdN" firstAttribute="top" secondItem="h8d-mB-UjM" secondAttribute="top" constant="6" id="5lJ-AC-XPj"/>
+                                            <constraint firstItem="0qv-9K-sw3" firstAttribute="leading" secondItem="h8d-mB-UjM" secondAttribute="leading" constant="6" id="CdN-u5-Lcj"/>
+                                            <constraint firstItem="mDj-as-6lB" firstAttribute="leading" secondItem="h8d-mB-UjM" secondAttribute="leading" constant="6" id="T6u-gY-Qn0"/>
+                                            <constraint firstItem="0qv-9K-sw3" firstAttribute="top" secondItem="XC6-94-zdN" secondAttribute="bottom" constant="6" id="TyA-Cn-ew0"/>
+                                            <constraint firstAttribute="trailing" secondItem="XC6-94-zdN" secondAttribute="trailing" constant="6" id="ZMs-12-loz"/>
+                                            <constraint firstAttribute="bottom" secondItem="0qv-9K-sw3" secondAttribute="bottom" constant="6" id="fTO-Vi-oIp"/>
+                                            <constraint firstAttribute="height" constant="80" id="iWc-Yq-4qO"/>
+                                            <constraint firstAttribute="trailing" secondItem="0qv-9K-sw3" secondAttribute="trailing" constant="6" id="qqn-es-dPQ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Seb-vd-ofz">
+                                        <rect key="frame" x="0.0" y="81" width="382" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="SFT-8Y-5c8"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVf-Vy-5GL">
+                                        <rect key="frame" x="0.0" y="132" width="382" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="zf5-eV-OaI"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwJ-3I-6rT">
+                                        <rect key="frame" x="0.0" y="183" width="382" height="508"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="508" id="1Y9-uC-IIJ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DuN-ck-P2f">
+                                        <rect key="frame" x="0.0" y="692" width="382" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="l7V-66-RE1"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qSP-YR-meS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Avc-Q7-Opb" firstAttribute="top" secondItem="qSP-YR-meS" secondAttribute="top" constant="16" id="5xu-mV-mhx"/>
+                            <constraint firstItem="qSP-YR-meS" firstAttribute="trailing" secondItem="Avc-Q7-Opb" secondAttribute="trailing" constant="16" id="9mr-4Q-6Ko"/>
+                            <constraint firstItem="Avc-Q7-Opb" firstAttribute="leading" secondItem="qSP-YR-meS" secondAttribute="leading" constant="16" id="OyN-FQ-ZBF"/>
+                            <constraint firstItem="qSP-YR-meS" firstAttribute="bottom" secondItem="Avc-Q7-Opb" secondAttribute="bottom" constant="16" id="wiq-E9-Ody"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="청출어람" id="EWp-6Q-wNC">
+                        <barButtonItem key="leftBarButtonItem" image="Navi_Back" id="4lv-zR-q9d"/>
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="HU6-A4-8C5">
+                            <color key="tintColor" name="SignatureNWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="progressView" destination="iaz-3P-gJD" id="Sdq-6m-sRH"/>
+                        <outlet property="starRatingView" destination="XC6-94-zdN" id="487-RN-34O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rap-IZ-y4r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1330.4347826086957" y="93.75"/>
+        </scene>
         <!--청출어람-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="BecomeTheMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QbW-0y-EeK">
@@ -279,9 +435,15 @@
             <point key="canvasLocation" x="-394.20289855072468" y="93.75"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="XC6-94-zdN">
+            <size key="intrinsicContentSize" width="120" height="24"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Main_Filter" width="24" height="24"/>
         <image name="Main_Grid" width="24" height="24"/>
+        <image name="Navi_Back" width="32" height="32"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="link" catalog="system" width="128" height="122"/>
@@ -289,13 +451,16 @@
             <color red="0.29411764705882354" green="0.3843137254901961" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SignatureNWhite">
-            <color red="0.29411764705882354" green="0.3843137254901961" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.29399999976158142" green="0.38400000333786011" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="WhiteNBlack">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -46,8 +46,8 @@ extension MainViewController {
             .throttle(RxTimeInterval.milliseconds(300), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 guard let `self` = self else { return }
-                self.collectionView.reloadData()
-                
+                let viewController = MainFilterViewController.viewController()
+                self.navigationController?.pushViewController(viewController, animated: true)
             }).disposed(by: disposeBag)
         
         
