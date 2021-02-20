@@ -40,6 +40,17 @@ class SignUpViewController: BaseViewController, StoryboardView {
         
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if let color = UIColor(named: "SignatureNWhite") {
+            emailTextField.layer.borderColor = color.cgColor
+            pwdTextField.layer.borderColor = color.cgColor
+            pwdCheckTextField.layer.borderColor = color.cgColor
+            nickNameTextField.layer.borderColor = color.cgColor
+            profileImage.layer.borderColor = color.withAlphaComponent(0.2).cgColor
+        }
+    }
+    
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -112,7 +123,8 @@ extension SignUpViewController {
         
         profileButton.rx.tap
             .debounce(RxTimeInterval.milliseconds(100), scheduler: MainScheduler.asyncInstance)
-            .subscribe(onNext: { _ in
+            .subscribe(onNext: { [weak self] _ in
+                guard let `self` = self else { return }
                 PhotoManager.shared.photoModelSubject = self.photoModelSubject
                 PhotoManager.shared.showPicker(self, maxNumberOfItems: 1)
             }).disposed(by: disposeBag)
@@ -146,13 +158,13 @@ extension SignUpViewController {
         self.reactor = SignUpReactor()
         
         completeButton.isEnabled = false
-        completeButton.backgroundColor = UIColor.colorFromRGB(0x4b6293, alpha: 0.6)
+        completeButton.backgroundColor = UIColor(named: "SignatureNWhite")!.withAlphaComponent(0.6)
         completeButton.layer.addBasicBorder(color: .clear, width: 0.5, cornerRadius: 5)
         emailTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
         pwdTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
         pwdCheckTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
         nickNameTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
-        profileImage.layer.addBasicBorder(color: UIColor.colorFromRGB(0x4b6293, alpha: 0.2), width: 2, cornerRadius: 27)
+        profileImage.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!.withAlphaComponent(0.2), width: 2, cornerRadius: 27)
         
     }
 }

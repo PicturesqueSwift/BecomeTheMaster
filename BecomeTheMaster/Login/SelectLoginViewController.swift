@@ -27,6 +27,14 @@ class SelectLoginViewController: BaseViewController {
         initializedConfigure()
         buttonBind()
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if let color = UIColor(named: "BlackNWhite") {
+            googleButton.layer.borderColor = color.cgColor
+            appleButton.layer.borderColor = color.cgColor
+        }
+    }
 
     static func viewController(_ closeIsHidden: Bool) -> SelectLoginViewController {
         let viewController = SelectLoginViewController.viewController("Login")
@@ -39,15 +47,18 @@ class SelectLoginViewController: BaseViewController {
 extension SelectLoginViewController {
     private func buttonBind() {
         lookAroundButton.rx.tap
-            .flatMap { _ in return self.rx.showBasicAlert(title: "둘러보시겠습니까?") }
+            .flatMap { [weak self] _ -> Observable<Bool> in
+                guard let `self` = self else { return Observable.empty() }
+                return self.rx.showBasicAlert(title: "둘러보시겠습니까?")
+            }
             .filter { $0 }
-            .subscribe(onNext: { _ in
-                self.dismiss(animated: true, completion: nil)
+            .subscribe(onNext: { [weak self] _ in
+                self?.dismiss(animated: true, completion: nil)
             }).disposed(by: disposeBag)
         
         closeButton.rx.tap
-            .subscribe(onNext: { _ in
-                self.dismiss(animated: true, completion: nil)
+            .subscribe(onNext: { [weak self] _ in
+                self?.dismiss(animated: true, completion: nil)
             }).disposed(by: disposeBag)
             
     }

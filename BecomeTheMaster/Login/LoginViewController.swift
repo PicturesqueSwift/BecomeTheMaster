@@ -22,6 +22,14 @@ class LoginViewController: BaseViewController {
         bind()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if let color = UIColor(named: "SignatureNWhite") {
+            emailTextField.layer.borderColor = color.cgColor
+            pwdTextField.layer.borderColor = color.cgColor
+        }
+    }
+    
     @IBAction func closeButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -37,9 +45,9 @@ extension LoginViewController {
                 return FirebaseManager.shared.auth.rx.signIn(email: email, password: password)
             }.filter { $0 }
             .subscribe(onNext: { [weak self] _ in
-                //self?.navigationController?.popToRootViewController(animated: true)
                 self?.presentingViewController?.dismiss(animated: true, completion: nil)
             }).disposed(by: disposeBag)
+        
     }
     
     private func initializedConfigure() {

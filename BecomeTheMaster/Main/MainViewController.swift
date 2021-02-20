@@ -18,16 +18,13 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var gridButton: UIBarButtonItem!
     @IBOutlet weak var filterButton: UIBarButtonItem!
     
-//    let auth = Auth.auth()
-    
-    var width: CGFloat = 0
+    var flag: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        width = self.view.frame.width
         collectionView.reloadData()
         buttonBind()
         
@@ -41,7 +38,7 @@ extension MainViewController {
             .throttle(RxTimeInterval.milliseconds(300), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 guard let `self` = self else { return }
-                self.width = self.view.frame.width == self.width ? (self.width / 2) - 1 : self.view.frame.width
+                self.flag = !self.flag
                 self.collectionView.reloadData()
             }).disposed(by: disposeBag)
         
@@ -49,9 +46,8 @@ extension MainViewController {
             .throttle(RxTimeInterval.milliseconds(300), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 guard let `self` = self else { return }
-                self.width = self.view.frame.width == self.width ? (self.width / 2) - 1 : self.view.frame.width
-                self.collectionView.reloadData()
-                
+                let viewController = MainFilterViewController.viewController()
+                self.navigationController?.pushViewController(viewController, animated: true)
             }).disposed(by: disposeBag)
         
         
@@ -65,8 +61,15 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCell", for: indexPath) as! MainCell
-        return cell
+        if flag {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainHorizontalCell", for: indexPath) as! MainHorizontalCell
+            cell.updateCell()
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainFullCell", for: indexPath) as! MainFullCell
+            cell.updateCell()
+            return cell
+        }
     }
     
 }
@@ -74,21 +77,47 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     //Cell Size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        //let collectionViewCellWidth = collectionView.frame.width
-        
-        return CGSize(width: width, height: width)
+        if flag {
+            let appWidth = APP_WIDTH() - 16
+            return CGSize(width: appWidth, height: 100)
+        } else {
+            let appWidth = APP_WIDTH() - 16
+            return CGSize(width: appWidth, height: appWidth)
+        }
     }
     
-    //Top & Bottom Margin
+    //CollectionView Inset
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        let sideSpace = (36 * APP_WIDTH()) / 414
+//        return UIEdgeInsets(top: 26, left: sideSpace, bottom: 32, right: sideSpace)
+        let space: CGFloat = 8
+        return UIEdgeInsets(top: space, left: space, bottom: space, right: space)
+    }
+    
+    //Top & Bottom Margin Between Cell
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return 1
+        return 8
     }
     
-    //Side Margin
+    //Side Margin Between Cell
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 1
+        return 8
     }
+    
+//    //Size For Header In Section
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+//                        referenceSizeForHeaderInSection section: Int) -> CGSize{
+//        let langCode = "LANG_CODE".localized
+//        let height:CGFloat = App.preferenceManager.user != nil ? langCode == "kr" ? 390 : 165 : 165
+//        return CGSize(width: APP_WIDTH(), height: height)
+//    }
+//
+//    //Size For Footer In Section
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+//                        referenceSizeForFooterInSection section: Int) -> CGSize{
+//
+//        return CGSize(width: APP_WIDTH(), height: 120)
+//
+//    }
 }

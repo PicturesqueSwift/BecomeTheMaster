@@ -15,7 +15,7 @@ class SelectUserTypeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     @IBAction func backButton(_ sender: Any) {
