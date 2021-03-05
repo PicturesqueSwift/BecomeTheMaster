@@ -17,19 +17,20 @@ struct StarRateAccessibility {
     Makes the view accesible by settings its label and using rating as value.
 
     */
-    
+
     static func update(_ view: UIView, rating: Double, text: String?, settings: StarRateSettings) {
         view.isAccessibilityElement = true
 
-        view.accessibilityTraits = settings.updateOnTouch ? UIAccessibilityTraits.adjustable :UIAccessibilityTraits.none
+        view.accessibilityTraits = settings.updateOnTouch ?
+        UIAccessibilityTraits.adjustable :UIAccessibilityTraits.none
 
-//        var accessibilityLabel = CosmosLocalizedRating.ratingTranslation
-//
-//        if let text = text, text != "" {
-//          accessibilityLabel += " \(text)"
-//        }
-//
-//        view.accessibilityLabel = accessibilityLabel
+        var accessibilityLabel = StarRateLocalizedRating.ratingTranslation
+
+        if let text = text, text != "" {
+            accessibilityLabel += " \(text)"
+        }
+
+        view.accessibilityLabel = accessibilityLabel
 
         view.accessibilityValue = accessibilityValue(view, rating: rating, settings: settings)
     }

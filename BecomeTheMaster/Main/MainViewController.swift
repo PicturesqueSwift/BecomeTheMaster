@@ -29,7 +29,7 @@ class MainViewController: BaseViewController {
         buttonBind()
         
     }
-
+    
 }
 
 extension MainViewController {
@@ -47,6 +47,7 @@ extension MainViewController {
             .subscribe(onNext: { [weak self] _ in
                 guard let `self` = self else { return }
                 let viewController = MainFilterViewController.viewController()
+                viewController.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(viewController, animated: true)
             }).disposed(by: disposeBag)
         

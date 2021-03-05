@@ -49,16 +49,15 @@ class StarRateLayers {
 
     */
     class func createCompositeStarLayer(_ starFillLevel: Double, settings: StarRateSettings, isRightToLeft: Bool) -> CALayer {
+        if starFillLevel >= 1 {
+            return createStarLayer(.full, isFilled: true, settings: settings)
+        }
+        
+        if starFillLevel == 0 {
+            return createStarLayer(.empty, isFilled: false, settings: settings)
+        }
 
-    if starFillLevel >= 1 {
-        return createStarLayer(true, settings: settings)
-    }
-
-    if starFillLevel == 0 {
-        return createStarLayer(false, settings: settings)
-    }
-
-    return createPartialStar(starFillLevel, settings: settings, isRightToLeft: isRightToLeft)
+        return createPartialStar(starFillLevel, settings: settings, isRightToLeft: isRightToLeft)
     }
 
     /**
@@ -75,32 +74,40 @@ class StarRateLayers {
 
     */
     class func createPartialStar(_ starFillLevel: Double, settings: StarRateSettings, isRightToLeft: Bool) -> CALayer {
-        let filledStar = createStarLayer(true, settings: settings)
-        let emptyStar = createStarLayer(false, settings: settings)
-
+        let fullStar = createStarLayer(.full, isFilled: true, settings: settings)
+        let halfStar = createStarLayer(.half, isFilled: true, settings: settings)
+        let emptyStar = createStarLayer(.empty, isFilled: false, settings: settings)
 
         let parentLayer = CALayer()
         parentLayer.contentsScale = UIScreen.main.scale
-        parentLayer.bounds = CGRect(origin: CGPoint(), size: filledStar.bounds.size)
+        parentLayer.bounds = CGRect(origin: CGPoint(), size: fullStar.bounds.size)
         parentLayer.anchorPoint = CGPoint()
         parentLayer.addSublayer(emptyStar)
-        parentLayer.addSublayer(filledStar)
+        parentLayer.addSublayer(halfStar)
+        parentLayer.addSublayer(fullStar)
 
         if isRightToLeft {
             // Flip the star horizontally for a right-to-left language
             let rotation = CATransform3DMakeRotation(CGFloat(Double.pi), 0, 1, 0)
-            filledStar.transform = CATransform3DTranslate(rotation, -filledStar.bounds.size.width, 0, 0)
+            fullStar.transform = CATransform3DTranslate(rotation, -fullStar.bounds.size.width, 0, 0)
         }
 
         // Make filled layer width smaller according to the fill level
-        filledStar.bounds.size.width *= CGFloat(starFillLevel)
+        fullStar.bounds.size.width *= CGFloat(starFillLevel)
 
         return parentLayer
     }
 
-    private class func createStarLayer(_ isFilled: Bool, settings: StarRateSettings) -> CALayer {
-        if let image = isFilled ? settings.filledImage : settings.emptyImage {
-            // Create a layer that shows a star from an image
+    private class func createStarLayer(_ starImage: StarFillImage, isFilled: Bool, settings: StarRateSettings) -> CALayer {
+        // Create a layer that shows a star from an image
+        
+        if starImage == .full, let image = settings.fullImage {
+            return StarLayer.create(image: image, size: settings.starSize)
+            
+        } else if starImage == .half, let image = settings.halfImage {
+            return StarLayer.create(image: image, size: settings.starSize)
+            
+        } else if starImage == .empty, let image = settings.emptyImage {
             return StarLayer.create(image: image, size: settings.starSize)
         }
 
@@ -108,7 +115,7 @@ class StarRateLayers {
 
         let fillColor = isFilled ? settings.filledColor : settings.emptyColor
         let strokeColor = isFilled ? settings.filledBorderColor : settings.emptyBorderColor
-
+        
         return StarLayer.create(settings.starPoints, size: settings.starSize,
                                 lineWidth: isFilled ? settings.filledBorderWidth : settings.emptyBorderWidth,
                                 fillColor: fillColor, strokeColor: strokeColor)

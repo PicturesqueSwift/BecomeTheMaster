@@ -8,14 +8,25 @@
 import UIKit
 import Foundation
 
-public enum StarFillMode {
+public enum StarFillMode: Int {
+    case full = 0
+    case half = 1
+    case precise = 2
+}
+
+public enum StarFillImage {
     case full
     case half
-    case precise
+    case empty
 }
 
 @IBDesignable open class StarRatingView: UIView {
+    
+    /**
 
+    The currently shown number of stars, usually between 1 and 5. If the value is decimal the stars will be shown according to the Fill Mode setting.
+
+    */
     @IBInspectable open var rating: Double = StarRateDefaultSettings.rating {
         didSet {
             if oldValue != rating {
@@ -23,25 +34,49 @@ public enum StarFillMode {
             }
         }
     }
-  
+
+    /// Currently shown text. Set it to nil to display just the stars without text.
+    @IBInspectable open var text: String? {
+        didSet {
+            if oldValue != text {
+                update()
+            }
+        }
+    }
+
+    /// Star rating settings.
     open var settings: StarRateSettings = .default {
         didSet {
             update()
         }
     }
   
+    /// Stores calculated size of the view. It is used as intrinsic content size.
     private var viewSize = CGSize()
 
+    /// Draws the stars when the view comes out of storyboard with default settings
     open override func awakeFromNib() {
         super.awakeFromNib()
 
         update()
     }
 
+    /**
+
+    Initializes and returns a newly allocated cosmos view object.
+
+    */
     public convenience init(settings: StarRateSettings = .default) {
         self.init(frame: .zero, settings: settings)
     }
 
+    /**
+
+    Initializes and returns a newly allocated cosmos view object with the specified frame rectangle.
+
+    - parameter frame: The frame rectangle for the view.
+
+    */
     override public convenience init(frame: CGRect) {
         self.init(frame: frame, settings: .default)
     }
@@ -52,26 +87,37 @@ public enum StarFillMode {
         update()
         improvePerformance()
     }
-  
+
+    /// Initializes and returns a newly allocated cosmos view object.
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         improvePerformance()
     }
   
+    /// Change view settings for faster drawing
     private func improvePerformance() {
+        /// Cache the view into a bitmap instead of redrawing the stars each time
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.scale
 
         isOpaque = true
     }
-  
+
+    /**
+
+    Updates the stars and optional text based on current values of `rating` and `text` properties.
+
+    */
     open func update() {
 
         // Create star layers
         // ------------
 
-        let layers = StarRateLayers.createStarLayers(rating, settings: settings, isRightToLeft: RightToLeft.isRightToLeft(self))
+        let layers = StarRateLayers.createStarLayers(rating, settings: settings,
+                                                     isRightToLeft: RightToLeft.isRightToLeft(self))
+
+        layer.sublayers = layers
 
 
         // Update size
@@ -105,7 +151,7 @@ public enum StarFillMode {
     override open var intrinsicContentSize:CGSize {
         return viewSize
     }
-
+  
     /**
 
     Prepares the Cosmos view for reuse in a table view cell.
@@ -126,14 +172,17 @@ public enum StarFillMode {
     */
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-
+        settings.fullImage = fullImage
+        settings.halfImage = halfImage
+        settings.emptyImage = emptyImage
+        update()
         if #available(iOS 13.0, tvOS 10.0, *) {
             if self.traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
                 update()
             }
         }
     }
-  
+
     // MARK: - Accessibility
 
     private func updateAccessibility() {
@@ -157,7 +206,7 @@ public enum StarFillMode {
         didTouchCosmos?(rating)
         didFinishTouchingCosmos?(rating)
     }
-  
+
     // MARK: - Touch recognition
 
     /// Closure will be called when user touches the cosmos view. The touch rating argument is passed to the closure.
@@ -194,8 +243,8 @@ public enum StarFillMode {
     /// Detecting event when the user lifts their finger.
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if settings.passTouchesToSuperview { super.touchesEnded(touches, with: event) }
-            didFinishTouchingCosmos?(rating)
-        }
+        didFinishTouchingCosmos?(rating)
+    }
 
     /// Deciding whether to recognize a gesture.
     open override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -240,7 +289,7 @@ public enum StarFillMode {
         didTouchCosmos?(calculatedTouchRating)
         previousRatingForDidTouchCallback = calculatedTouchRating
     }
-
+  
     private var previousRatingForDidTouchCallback: Double = -123.192
 
     /// Increase the hitsize of the view if it's less than 44px for easier touching.
@@ -248,8 +297,8 @@ public enum StarFillMode {
         let oprimizedBounds = CosmosTouchTarget.optimize(bounds)
         return oprimizedBounds.contains(point)
     }
-  
-  
+
+
     // MARK: - Properties inspectable from the storyboard
 
     @IBInspectable var totalStars: Int = StarRateDefaultSettings.totalStars {
@@ -257,7 +306,7 @@ public enum StarFillMode {
             settings.totalStars = totalStars
         }
     }
-  
+
     @IBInspectable var starSize: Double = StarRateDefaultSettings.starSize {
         didSet {
             settings.starSize = starSize
@@ -269,7 +318,7 @@ public enum StarFillMode {
             settings.filledColor = filledColor
         }
     }
-
+  
     @IBInspectable var emptyColor: UIColor = StarRateDefaultSettings.emptyColor {
         didSet {
             settings.emptyColor = emptyColor
@@ -299,7 +348,7 @@ public enum StarFillMode {
             settings.filledBorderWidth = filledBorderWidth
         }
     }
-
+  
     @IBInspectable var starMargin: Double = StarRateDefaultSettings.starMargin {
         didSet {
             settings.starMargin = starMargin
@@ -324,18 +373,24 @@ public enum StarFillMode {
         }
     }
 
-    @IBInspectable var filledImage: UIImage? {
+    @IBInspectable var fullImage: UIImage? {
         didSet {
-            settings.filledImage = filledImage
+            settings.fullImage = fullImage
         }
     }
-
+    
+    @IBInspectable var halfImage: UIImage? {
+        didSet {
+            settings.halfImage = halfImage
+        }
+    }
+  
     @IBInspectable var emptyImage: UIImage? {
         didSet {
             settings.emptyImage = emptyImage
         }
     }
-
+  
     /// Draw the stars in interface buidler
     open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()

@@ -140,44 +140,26 @@
                                                 <color key="textColor" name="SignatureNWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XC6-94-zdN" customClass="CosmosView" customModule="Cosmos">
-                                                <rect key="frame" x="256" y="6" width="120" height="24"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XC6-94-zdN" customClass="StarRatingView" customModule="BecomeTheMaster" customModuleProvider="target">
+                                                <rect key="frame" x="226" y="6" width="150" height="26"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                                        <real key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="Star_Full"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="halfImage" value="Star_Half"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="Star_Empty"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="starSize">
-                                                        <real key="value" value="24"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
-                                                        <color key="value" name="SignatureNWhite"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
-                                                        <color key="value" red="0.29411764705882354" green="0.38431372549019605" blue="0.57647058823529407" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
-                                                        <color key="value" name="SignatureNWhite"/>
+                                                        <real key="value" value="26"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
-                                                        <integer key="value" value="0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
-                                                        <color key="value" red="0.29411764705882354" green="0.38431372549019605" blue="0.57647058823529407" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                        <integer key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qv-9K-sw3">
-                                                <rect key="frame" x="6" y="36" width="370" height="38"/>
+                                                <rect key="frame" x="6" y="38" width="370" height="36"/>
                                                 <subviews>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="iaz-3P-gJD">
-                                                        <rect key="frame" x="0.0" y="17" width="370" height="4"/>
+                                                        <rect key="frame" x="0.0" y="16" width="370" height="4"/>
                                                         <color key="progressTintColor" name="SignatureNWhite"/>
                                                         <color key="trackTintColor" red="0.29411764709999999" green="0.38431372549999998" blue="0.57647058819999997" alpha="0.60677975169999998" colorSpace="calibratedRGB"/>
                                                     </progressView>
@@ -232,7 +214,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qSP-YR-meS"/>
@@ -245,14 +227,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="청출어람" id="EWp-6Q-wNC">
-                        <barButtonItem key="leftBarButtonItem" image="Navi_Back" id="4lv-zR-q9d"/>
+                        <barButtonItem key="leftBarButtonItem" image="Navi_Back" id="4lv-zR-q9d">
+                            <connections>
+                                <action selector="backButton:" destination="N5d-9s-TzZ" id="iZh-Qm-Upa"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="저장" id="HU6-A4-8C5">
                             <color key="tintColor" name="SignatureNWhite"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="progressView" destination="iaz-3P-gJD" id="Sdq-6m-sRH"/>
-                        <outlet property="starRatingView" destination="XC6-94-zdN" id="487-RN-34O"/>
+                        <outlet property="starRateView" destination="XC6-94-zdN" id="gbg-cB-CfI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rap-IZ-y4r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -264,7 +250,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="BecomeTheMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QbW-0y-EeK">
@@ -437,13 +423,16 @@
     </scenes>
     <designables>
         <designable name="XC6-94-zdN">
-            <size key="intrinsicContentSize" width="120" height="24"/>
+            <size key="intrinsicContentSize" width="150" height="26"/>
         </designable>
     </designables>
     <resources>
         <image name="Main_Filter" width="24" height="24"/>
         <image name="Main_Grid" width="24" height="24"/>
         <image name="Navi_Back" width="32" height="32"/>
+        <image name="Star_Empty" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Star_Full" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="Star_Half" width="170.66667175292969" height="170.66667175292969"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="link" catalog="system" width="128" height="122"/>
@@ -458,9 +447,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

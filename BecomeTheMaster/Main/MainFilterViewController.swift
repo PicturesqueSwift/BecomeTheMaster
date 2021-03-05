@@ -6,11 +6,10 @@
 //
 
 import UIKit
-import Cosmos
 
 class MainFilterViewController: BaseViewController {
 
-    @IBOutlet weak var starRatingView: CosmosView!
+    @IBOutlet weak var starRateView: StarRatingView!
     @IBOutlet weak var progressView: UIProgressView!
     
     override func viewDidLoad() {
@@ -23,6 +22,14 @@ class MainFilterViewController: BaseViewController {
         return viewController
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        DEBUG_LOG(starRateView.rating)
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension MainFilterViewController {
