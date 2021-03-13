@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import Foundation
 
 public enum StarFillMode: Int {
@@ -172,15 +174,9 @@ public enum StarFillImage {
     */
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        settings.fullImage = fullImage
-        settings.halfImage = halfImage
-        settings.emptyImage = emptyImage
-        update()
-        if #available(iOS 13.0, tvOS 10.0, *) {
-            if self.traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
-                update()
-            }
-        }
+        settings.fullImage = fullImage?.imageAsset?.image(with: traitCollection)
+        settings.halfImage = halfImage?.imageAsset?.image(with: traitCollection)
+        settings.emptyImage = emptyImage?.imageAsset?.image(with: traitCollection)
     }
 
     // MARK: - Accessibility
@@ -396,5 +392,16 @@ public enum StarFillImage {
         super.prepareForInterfaceBuilder()
 
         update()
+    }
+}
+
+extension Reactive where Base: StarRatingView {
+    public var itemSelected: ControlEvent<Double> {
+        let source = delegate.methodInvoked(#selector(UICollectionViewDelegate.collectionView(_:didSelectItemAt:)))
+            .map { a in
+                return try castOrThrow(IndexPath.self, a[1])
+            }
+        
+        return ControlEvent(events: source)
     }
 }

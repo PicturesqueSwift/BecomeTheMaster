@@ -158,17 +158,20 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qv-9K-sw3">
                                                 <rect key="frame" x="6" y="38" width="370" height="36"/>
                                                 <subviews>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="iaz-3P-gJD">
-                                                        <rect key="frame" x="0.0" y="16" width="370" height="4"/>
-                                                        <color key="progressTintColor" name="SignatureNWhite"/>
-                                                        <color key="trackTintColor" red="0.29411764709999999" green="0.38431372549999998" blue="0.57647058819999997" alpha="0.60677975169999998" colorSpace="calibratedRGB"/>
-                                                    </progressView>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="z2U-xa-N8h">
+                                                        <rect key="frame" x="-2" y="3" width="374" height="31"/>
+                                                        <color key="minimumTrackTintColor" name="SignatureNWhite"/>
+                                                        <color key="maximumTrackTintColor" systemColor="systemGray2Color"/>
+                                                        <connections>
+                                                            <action selector="changedSliderValue:" destination="N5d-9s-TzZ" eventType="valueChanged" id="uWF-WZ-qqn"/>
+                                                        </connections>
+                                                    </slider>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="iaz-3P-gJD" firstAttribute="centerY" secondItem="0qv-9K-sw3" secondAttribute="centerY" id="3fN-a4-aqe"/>
-                                                    <constraint firstAttribute="trailing" secondItem="iaz-3P-gJD" secondAttribute="trailing" id="Z6V-Nc-or2"/>
-                                                    <constraint firstItem="iaz-3P-gJD" firstAttribute="leading" secondItem="0qv-9K-sw3" secondAttribute="leading" id="rIw-pb-APn"/>
+                                                    <constraint firstItem="z2U-xa-N8h" firstAttribute="centerY" secondItem="0qv-9K-sw3" secondAttribute="centerY" id="JAk-of-RDT"/>
+                                                    <constraint firstItem="z2U-xa-N8h" firstAttribute="leading" secondItem="0qv-9K-sw3" secondAttribute="leading" id="VUk-97-PoM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="z2U-xa-N8h" secondAttribute="trailing" id="pEd-2x-uXe"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -214,7 +217,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qSP-YR-meS"/>
@@ -237,7 +240,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="progressView" destination="iaz-3P-gJD" id="Sdq-6m-sRH"/>
+                        <outlet property="progressBar" destination="z2U-xa-N8h" id="ihJ-Rq-Li3"/>
                         <outlet property="starRateView" destination="XC6-94-zdN" id="gbg-cB-CfI"/>
                     </connections>
                 </viewController>
@@ -447,6 +450,12 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

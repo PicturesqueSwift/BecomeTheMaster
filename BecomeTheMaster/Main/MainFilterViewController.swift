@@ -6,15 +6,25 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MainFilterViewController: BaseViewController {
 
     @IBOutlet weak var starRateView: StarRatingView!
-    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var progressBar: UISlider!
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func changedSliderValue(_ sender: UISlider) {
+        starRateView.rating = Double(progressBar.value)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureInit()
     }
     
     static func viewController() -> MainFilterViewController {
@@ -24,16 +34,15 @@ class MainFilterViewController: BaseViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        DEBUG_LOG(starRateView.rating)
+        
     }
     
-    @IBAction func backButton(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
 }
 
 extension MainFilterViewController {
     private func configureInit() {
-        
+        starRateView.rx.tap
     }
+    
 }
+
