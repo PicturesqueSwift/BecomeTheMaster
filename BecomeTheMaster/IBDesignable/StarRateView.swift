@@ -394,14 +394,3 @@ public enum StarFillImage {
         update()
     }
 }
-
-extension Reactive where Base: StarRatingView {
-    public var itemSelected: ControlEvent<Double> {
-        let source = delegate.methodInvoked(#selector(UICollectionViewDelegate.collectionView(_:didSelectItemAt:)))
-            .map { a in
-                return try castOrThrow(IndexPath.self, a[1])
-            }
-        
-        return ControlEvent(events: source)
-    }
-}

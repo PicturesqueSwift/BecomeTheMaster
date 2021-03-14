@@ -13,6 +13,8 @@ class MainFilterViewController: BaseViewController {
 
     @IBOutlet weak var starRateView: StarRatingView!
     @IBOutlet weak var progressBar: UISlider!
+    @IBOutlet weak var locationUpdateButton: UIButton!
+    @IBOutlet weak var locationUpdateLabel: UILabel!
     
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -25,6 +27,7 @@ class MainFilterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureInit()
+        bind()
     }
     
     static func viewController() -> MainFilterViewController {
@@ -37,11 +40,19 @@ class MainFilterViewController: BaseViewController {
         
     }
     
+    func bind() {
+        locationUpdateButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                guard let `self` = self else { return }
+                self.locationUpdateLabel.isHidden = !self.locationUpdateLabel.isHidden
+            }).disposed(by: disposeBag)
+    }
+    
 }
 
 extension MainFilterViewController {
     private func configureInit() {
-        starRateView.rx.tap
+        
     }
     
 }
