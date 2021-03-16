@@ -17,7 +17,7 @@ target 'BecomeTheMaster' do
   pod 'Toaster'
   pod 'YPImagePicker'
   pod 'Kingfisher'
-  pod 'Cosmos'
+  pod 'Alamofire'
 
   # Pods for BecomeTheMaster
 
