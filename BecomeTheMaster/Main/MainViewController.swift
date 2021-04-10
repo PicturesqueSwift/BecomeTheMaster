@@ -33,6 +33,7 @@ class MainViewController: BaseViewController {
 }
 
 extension MainViewController {
+    
     func buttonBind () {
         gridButton.rx.tap
             .throttle(RxTimeInterval.milliseconds(300), scheduler: MainScheduler.instance)
@@ -105,20 +106,4 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         
         return 8
     }
-    
-//    //Size For Header In Section
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-//                        referenceSizeForHeaderInSection section: Int) -> CGSize{
-//        let langCode = "LANG_CODE".localized
-//        let height:CGFloat = App.preferenceManager.user != nil ? langCode == "kr" ? 390 : 165 : 165
-//        return CGSize(width: APP_WIDTH(), height: height)
-//    }
-//
-//    //Size For Footer In Section
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-//                        referenceSizeForFooterInSection section: Int) -> CGSize{
-//
-//        return CGSize(width: APP_WIDTH(), height: 120)
-//
-//    }
 }

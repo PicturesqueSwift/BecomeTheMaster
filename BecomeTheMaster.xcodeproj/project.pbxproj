@@ -27,9 +27,16 @@
 		DA61665C25DE48B900C13DA0 /* MainHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61665B25DE48B900C13DA0 /* MainHorizontalCell.swift */; };
 		DA65D73425CA36A800238A26 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65D73325CA36A800238A26 /* String+Ex.swift */; };
 		DA65D73F25CA563300238A26 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65D73A25CA4FEF00238A26 /* PaddingLabel.swift */; };
+		DA6B6577261172CA00D761D6 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B6576261172CA00D761D6 /* App.swift */; };
 		DA72C39425DB4F3A0096ABC5 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA72C39325DB4F3A0096ABC5 /* Localized.strings */; };
-		DA75159726009D540093B800 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75159626009D540093B800 /* Router.swift */; };
+		DA75159726009D540093B800 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75159626009D540093B800 /* API.swift */; };
 		DA75159C26009F410093B800 /* KakaoRestAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75159B26009F410093B800 /* KakaoRestAPIModel.swift */; };
+		DA7A11032603451B008D2899 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A11022603451B008D2899 /* SearchAddressViewController.swift */; };
+		DAA5FD4F2615898B00805689 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5FD4E2615898A00805689 /* UIView+Ex.swift */; };
+		DAA5FD542615A48F00805689 /* MainFilterReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5FD532615A48F00805689 /* MainFilterReactor.swift */; };
+		DACCCC562612BF0B00EE4865 /* SearchAddressReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCCC552612BF0B00EE4865 /* SearchAddressReactor.swift */; };
+		DACCCC5A2612DFE100EE4865 /* LongitudeAndLatitude.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCCC592612DFE100EE4865 /* LongitudeAndLatitude.swift */; };
+		DACCCC5D2612F32A00EE4865 /* Double+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCCC5C2612F32A00EE4865 /* Double+Ex.swift */; };
 		E0EE75976545B0980528259A /* Pods_BecomeTheMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFD17F57A0C30942D973B2A /* Pods_BecomeTheMaster.framework */; };
 		FF6681EB25C53AD60041E617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6681EA25C53AD60041E617 /* AppDelegate.swift */; };
 		FF6681F725C53AD70041E617 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6681F525C53AD70041E617 /* LaunchScreen.storyboard */; };
@@ -43,7 +50,7 @@
 		FF98945125C655B30021F8AF /* Messenger.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF98942C25C655B20021F8AF /* Messenger.storyboard */; };
 		FF98945225C655B30021F8AF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF98942E25C655B20021F8AF /* SettingViewController.swift */; };
 		FF98945325C655B30021F8AF /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF98942F25C655B20021F8AF /* Setting.storyboard */; };
-		FF98945425C655B30021F8AF /* KakaoRestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF98943125C655B20021F8AF /* KakaoRestAPI.swift */; };
+		FF98945425C655B30021F8AF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF98943125C655B20021F8AF /* Router.swift */; };
 		FF98945525C655B30021F8AF /* Auth+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF98943325C655B20021F8AF /* Auth+Rx.swift */; };
 		FF98945625C655B30021F8AF /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF98943425C655B20021F8AF /* UIViewController+Ex.swift */; };
 		FF98945725C655B30021F8AF /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF98943525C655B30021F8AF /* UIColor+Ex.swift */; };
@@ -88,9 +95,16 @@
 		DA61665B25DE48B900C13DA0 /* MainHorizontalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHorizontalCell.swift; sourceTree = "<group>"; };
 		DA65D73325CA36A800238A26 /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		DA65D73A25CA4FEF00238A26 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		DA6B6576261172CA00D761D6 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		DA72C39325DB4F3A0096ABC5 /* Localized.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localized.strings; sourceTree = "<group>"; };
-		DA75159626009D540093B800 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DA75159626009D540093B800 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DA75159B26009F410093B800 /* KakaoRestAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoRestAPIModel.swift; sourceTree = "<group>"; };
+		DA7A11022603451B008D2899 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
+		DAA5FD4E2615898A00805689 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
+		DAA5FD532615A48F00805689 /* MainFilterReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFilterReactor.swift; sourceTree = "<group>"; };
+		DACCCC552612BF0B00EE4865 /* SearchAddressReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressReactor.swift; sourceTree = "<group>"; };
+		DACCCC592612DFE100EE4865 /* LongitudeAndLatitude.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongitudeAndLatitude.swift; sourceTree = "<group>"; };
+		DACCCC5C2612F32A00EE4865 /* Double+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ex.swift"; sourceTree = "<group>"; };
 		F61AABABEF3EDE1B57906FFC /* Pods-BecomeTheMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BecomeTheMaster.debug.xcconfig"; path = "Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		FF6681E725C53AD60041E617 /* BecomeTheMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BecomeTheMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6681EA25C53AD60041E617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +120,7 @@
 		FF98942C25C655B20021F8AF /* Messenger.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messenger.storyboard; sourceTree = "<group>"; };
 		FF98942E25C655B20021F8AF /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FF98942F25C655B20021F8AF /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
-		FF98943125C655B20021F8AF /* KakaoRestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoRestAPI.swift; sourceTree = "<group>"; };
+		FF98943125C655B20021F8AF /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FF98943325C655B20021F8AF /* Auth+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Auth+Rx.swift"; sourceTree = "<group>"; };
 		FF98943425C655B20021F8AF /* UIViewController+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
 		FF98943525C655B30021F8AF /* UIColor+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
@@ -170,8 +184,8 @@
 		DA3BCEF525C7D79900687DC9 /* Reactive */ = {
 			isa = PBXGroup;
 			children = (
-				DA3BCEF625C7D7CE00687DC9 /* UITextField+Rx.swift */,
 				DA3BCEF425C7D78200687DC9 /* Firebase */,
+				DA3BCEF625C7D7CE00687DC9 /* UITextField+Rx.swift */,
 			);
 			path = Reactive;
 			sourceTree = "<group>";
@@ -188,6 +202,7 @@
 		DA3CF63D25C795AC00918767 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DACCCC592612DFE100EE4865 /* LongitudeAndLatitude.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,6 +230,15 @@
 				DA75159B26009F410093B800 /* KakaoRestAPIModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DACCCC532612BEE600EE4865 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				DAA5FD532615A48F00805689 /* MainFilterReactor.swift */,
+				DACCCC552612BF0B00EE4865 /* SearchAddressReactor.swift */,
+			);
+			path = Reactor;
 			sourceTree = "<group>";
 		};
 		EEA1AE4DFE1E071AA868FBE2 /* Pods */ = {
@@ -273,11 +297,13 @@
 		FF98942125C655B20021F8AF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DACCCC532612BEE600EE4865 /* Reactor */,
 				DA3CF63D25C795AC00918767 /* Model */,
 				FF98942525C655B20021F8AF /* Cell */,
 				FF98942325C655B20021F8AF /* Main.storyboard */,
 				FF98942225C655B20021F8AF /* MainViewController.swift */,
 				DA41181125DF3B33007A1BE5 /* MainFilterViewController.swift */,
+				DA7A11022603451B008D2899 /* SearchAddressViewController.swift */,
 				FF98942825C655B20021F8AF /* TabBarController.swift */,
 			);
 			path = Main;
@@ -314,8 +340,9 @@
 			isa = PBXGroup;
 			children = (
 				DA75159A26009F290093B800 /* Model */,
-				DA75159626009D540093B800 /* Router.swift */,
-				FF98943125C655B20021F8AF /* KakaoRestAPI.swift */,
+				DA6B6576261172CA00D761D6 /* App.swift */,
+				DA75159626009D540093B800 /* API.swift */,
+				FF98943125C655B20021F8AF /* Router.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -325,10 +352,12 @@
 			children = (
 				FF98943825C655B30021F8AF /* UIApplication+Ex.swift */,
 				FF98943425C655B20021F8AF /* UIViewController+Ex.swift */,
+				DAA5FD4E2615898A00805689 /* UIView+Ex.swift */,
+				DA288FB125DCAF4800B293B6 /* UIImage+Ex.swift */,
 				FF98943725C655B30021F8AF /* CALayer+Ex.swift */,
 				FF98943525C655B30021F8AF /* UIColor+Ex.swift */,
 				DA65D73325CA36A800238A26 /* String+Ex.swift */,
-				DA288FB125DCAF4800B293B6 /* UIImage+Ex.swift */,
+				DACCCC5C2612F32A00EE4865 /* Double+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -519,25 +548,32 @@
 				FF98946725C655B30021F8AF /* BaseViewController.swift in Sources */,
 				FF98945825C655B30021F8AF /* Storage+Rx.swift in Sources */,
 				DA41185825DF583A007A1BE5 /* StarRateAccessibility.swift in Sources */,
+				DACCCC5A2612DFE100EE4865 /* LongitudeAndLatitude.swift in Sources */,
+				DAA5FD542615A48F00805689 /* MainFilterReactor.swift in Sources */,
 				FF98945725C655B30021F8AF /* UIColor+Ex.swift in Sources */,
 				FF98945925C655B30021F8AF /* CALayer+Ex.swift in Sources */,
 				FF98944F25C655B30021F8AF /* TabBarController.swift in Sources */,
 				FF8A7FA625E0E7D7005931A7 /* StarRateText.swift in Sources */,
+				DAA5FD4F2615898B00805689 /* UIView+Ex.swift in Sources */,
 				FF98946625C655B30021F8AF /* Utils.swift in Sources */,
 				FF98946225C655B30021F8AF /* SignUpReactor.swift in Sources */,
+				DACCCC562612BF0B00EE4865 /* SearchAddressReactor.swift in Sources */,
 				DA65D73F25CA563300238A26 /* PaddingLabel.swift in Sources */,
 				FF98946325C655B30021F8AF /* ContractViewController.swift in Sources */,
 				DA65D73425CA36A800238A26 /* String+Ex.swift in Sources */,
 				FF98945A25C655B30021F8AF /* UIApplication+Ex.swift in Sources */,
 				FF98944C25C655B30021F8AF /* MainViewController.swift in Sources */,
+				DA7A11032603451B008D2899 /* SearchAddressViewController.swift in Sources */,
 				DA61665C25DE48B900C13DA0 /* MainHorizontalCell.swift in Sources */,
-				FF98945425C655B30021F8AF /* KakaoRestAPI.swift in Sources */,
+				FF98945425C655B30021F8AF /* Router.swift in Sources */,
 				DA41184525DF549C007A1BE5 /* StarRateTouch.swift in Sources */,
 				FF98945D25C655B30021F8AF /* SignUpViewController.swift in Sources */,
-				DA75159726009D540093B800 /* Router.swift in Sources */,
+				DA75159726009D540093B800 /* API.swift in Sources */,
 				DA41183725DF4E82007A1BE5 /* StarRateSettings.swift in Sources */,
+				DA6B6577261172CA00D761D6 /* App.swift in Sources */,
 				FF98946525C655B30021F8AF /* ViewControllerFromStoryboard.swift in Sources */,
 				FF98945025C655B30021F8AF /* MessengerViewController.swift in Sources */,
+				DACCCC5D2612F32A00EE4865 /* Double+Ex.swift in Sources */,
 				FF98945F25C655B30021F8AF /* LoginViewController.swift in Sources */,
 				DA28908325DCEFC400B293B6 /* Database+Rx.swift in Sources */,
 				DA3BCEF725C7D7CE00687DC9 /* UITextField+Rx.swift in Sources */,
@@ -709,6 +745,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				PLIST_FILE_OUTPUT_FORMAT = binary;
 				PRODUCT_BUNDLE_IDENTIFIER = Picturesque.BecomeTheMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -737,6 +774,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				PLIST_FILE_OUTPUT_FORMAT = binary;
 				PRODUCT_BUNDLE_IDENTIFIER = Picturesque.BecomeTheMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

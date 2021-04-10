@@ -30,7 +30,8 @@ extension KakaoRestAPIModel {
     
     struct AddressSearch: Codable {
         let documents: [Document]
-        let metaData: MetaData
+        let meta: MetaData
+        
     }
 }
 
@@ -72,7 +73,7 @@ extension KakaoRestAPIModel {
     
     struct KeywordSearch: Codable {
         let documents: [Document]
-        let metaData: MetaData
+        let meta: MetaData
         
         enum codingKeys: String, CodingKey {
             case documents
