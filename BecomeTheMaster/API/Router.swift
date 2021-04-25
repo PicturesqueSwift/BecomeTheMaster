@@ -39,7 +39,7 @@ extension Router {
     var path: String {
         switch self {
         case let .addressSearch(word, page):
-            return "/search/address.json?analyze_type=similar&size=15&query=\(word)&page=\(page)"
+            return "/search/address.json?analyze_type=similar&size=30&query=\(word)&page=\(page)"
             
         case let .keywordSearch(page, xPoint, yPoint, radius):
             let word: String = "%EB%8F%99%EC%82%AC%EB%AC%B4%EC%86%8C" // Encoded Word: "동사무소"

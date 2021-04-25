@@ -20,10 +20,12 @@ class MainFilterViewController: BaseViewController, StoryboardView {
     @IBOutlet weak var selectedLocationLabel: PaddingLabel!
     @IBOutlet weak var segmentForRadius: UISegmentedControl!
     @IBOutlet weak var setRadiusView: UIView!
+    @IBOutlet weak var locationHelpLabel: UILabel!
     
     //분야 설정
     @IBOutlet weak var fieldUpdateButton: UIButton!
     @IBOutlet weak var selectedFieldLabel: PaddingLabel!
+    @IBOutlet weak var fieldHelpLabel: UILabel!
     
     //요일 설정
     @IBOutlet weak var dayBgView: UIView!
@@ -100,9 +102,10 @@ extension MainFilterViewController {
             .debounce(RxTimeInterval.milliseconds(200), scheduler: MainScheduler.asyncInstance)
             .do(onNext: { [weak self] _ in
                 self?.setRadiusView.isHidden = false
+                self?.locationHelpLabel.isHidden = true
             })
             .map { (data, index) -> MainFilterReactor.Action in
-                let radius = index == 3 ? "20000" : index == 2 ? "10000" : index == 1 ? "5000" : "1000"
+                let radius = index == 3 ? "5000" : index == 2 ? "3000" : index == 1 ? "2000" : "1000"
                 return MainFilterReactor.Action.findNeighborhood(data: data, radius: radius)
             }.bind(to: reactor.action)
             .disposed(by: disposeBag)

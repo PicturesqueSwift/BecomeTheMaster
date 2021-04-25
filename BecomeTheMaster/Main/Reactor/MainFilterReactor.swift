@@ -26,6 +26,9 @@ class MainFilterReactor: Reactor {
         var neighborhoodCount: Int = 0
     }
     
+    var isEnd: Bool = false
+    var tempList: [KakaoRestAPIModel.KeywordSearch.Document] = []
+    
 }
 
 extension MainFilterReactor {
@@ -33,9 +36,26 @@ extension MainFilterReactor {
         switch action {
         
         case let .findNeighborhood(data, radius):
-            return App.api.keywordSearch(page: 1, xPoint: data.x, yPoint: data.y, radius: radius)
-                .map { return $0.meta.pageableCount }
+            
+            return Observable.of(1,2,3)
+                .take(while: { [weak self] _ in
+                    guard let `self` = self else { return false }
+                    return !self.isEnd
+                })
+                .flatMap { page -> Observable<KakaoRestAPIModel.KeywordSearch> in
+                    return App.api.keywordSearch(page: page, xPoint: data.x, yPoint: data.y, radius: radius)
+                        .do(onNext: { [weak self] model in
+                            self?.tempList += model.documents
+                            self?.isEnd = model.meta.isEnd
+                            DEBUG_LOG("model.meta.isEnd: \(model.meta.isEnd)")
+                        })
+                }
+                .map { $0.meta.pageableCount }
                 .flatMap { Observable.just(Mutation.updateNeighborhoodCount(count: $0)) }
+            
+//            return App.api.keywordSearch(page: 1, xPoint: data.x, yPoint: data.y, radius: radius)
+//                .map { return $0.meta.pageableCount }
+//                .flatMap { Observable.just(Mutation.updateNeighborhoodCount(count: $0)) }
             
         case .Unknown: return Observable.empty()
         
@@ -48,7 +68,8 @@ extension MainFilterReactor {
         switch mutation {
         case let .updateNeighborhoodCount(count):
             newState.neighborhoodCount = count
-            
+            self.isEnd = false
+            DEBUG_LOG("self.tempList.count: \(self.tempList.count)")
         case .Unknown: break
         }
         

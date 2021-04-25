@@ -81,7 +81,7 @@ extension SignUpReactor {
                 }.flatMap { [weak self] imageUrl -> Observable<Bool> in
                     //데이터베이스 유저정보 업로드
                     guard let userInform = self?.userInform else { return Observable.empty() }
-                    return FirebaseManager.shared.dbRef.rx.uploadUserInfo(uid: NSUUID().uuidString,
+                    return FirebaseManager.shared.realTimeDBRef.rx.uploadUserInfo(uid: NSUUID().uuidString,
                                                                           nickname: userInform.nickname,
                                                                           profileImageUrl: imageUrl)
                 }.filter { $0 }

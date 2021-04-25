@@ -12,8 +12,10 @@ final class FirebaseManager: NSObject {
     static let shared = FirebaseManager()
     
     let auth = Auth.auth()
+    let cloudDB = Firestore.firestore()
     let storageRef = Storage.storage().reference()
-    let dbRef = Database.database().reference()
+    let realTimeDBRef = Database.database().reference()
     
     override init() { }
+    
 }

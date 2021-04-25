@@ -49,7 +49,6 @@ extension SearchAddressViewController {
                     self.tableView.tableFooterView = nil
                 }
             })
-            .filter{ $0.count > 0 }
             .bind(to: tableView.rx.items) { (tableView, indexPath, dataSource) -> UITableViewCell in
                 let cell = UITableViewCell()
                 cell.textLabel?.text = dataSource.addressName
@@ -60,7 +59,7 @@ extension SearchAddressViewController {
         //MARK: Bindable With IBOutlet
         searchController.searchBar.rx.searchButtonClicked
             .withLatestFrom(searchController.searchBar.rx.text.orEmpty)
-            .map { SearchAddressReactor.Action.searchAddress(keyWord: $0) }
+            .map { SearchAddressReactor.Action.searchAddress(keyWord: $0, page: reactor.page) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
@@ -74,6 +73,14 @@ extension SearchAddressViewController {
                 self.selectedAddress.onNext(addressList[indexPath.row])
                 self.navigationController?.popViewController(animated: true)
             }.disposed(by: disposeBag)
+        
+        tableView.rx.willDisplayCell.map { $1 }
+            .withLatestFrom(reactor.state) { ($0, $1) }
+            .filter { !$0.1.isEnd }
+            .filter { $0.0.item == $0.1.addressList.count - 1 }
+            .map { _ in SearchAddressReactor.Action.loadNextPage }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
     }
 }

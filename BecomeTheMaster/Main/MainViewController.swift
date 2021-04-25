@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 
 class MainViewController: BaseViewController {
 

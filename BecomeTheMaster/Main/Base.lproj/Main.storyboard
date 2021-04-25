@@ -254,6 +254,12 @@
                                                         <color key="textColor" name="SignatureNWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역을 설정 해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6og-Vs-p9q">
+                                                        <rect key="frame" x="65.5" y="3" width="104" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="tQb-yY-cDn">
                                                         <rect key="frame" x="366" y="2" width="16" height="16"/>
                                                         <color key="tintColor" name="SignatureNWhite"/>
@@ -267,6 +273,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="6og-Vs-p9q" firstAttribute="centerY" secondItem="EII-jq-3MW" secondAttribute="centerY" id="0zZ-qj-6iV"/>
                                                     <constraint firstAttribute="height" constant="20" id="4R7-IS-7Da"/>
                                                     <constraint firstAttribute="bottom" secondItem="tQb-yY-cDn" secondAttribute="bottom" constant="2" id="53B-0Y-KSO"/>
                                                     <constraint firstAttribute="trailing" secondItem="bnK-fr-DPt" secondAttribute="trailing" id="5fL-rI-FQZ"/>
@@ -274,6 +281,7 @@
                                                     <constraint firstItem="bnK-fr-DPt" firstAttribute="leading" secondItem="1hL-lF-2Id" secondAttribute="leading" id="KBB-YP-FCX"/>
                                                     <constraint firstItem="EII-jq-3MW" firstAttribute="top" secondItem="1hL-lF-2Id" secondAttribute="top" id="MGT-eR-VNA"/>
                                                     <constraint firstAttribute="trailing" secondItem="tQb-yY-cDn" secondAttribute="trailing" id="PvW-41-A8a"/>
+                                                    <constraint firstItem="6og-Vs-p9q" firstAttribute="leading" secondItem="EII-jq-3MW" secondAttribute="trailing" constant="6" id="WJn-D9-ixK"/>
                                                     <constraint firstItem="bnK-fr-DPt" firstAttribute="top" secondItem="1hL-lF-2Id" secondAttribute="top" id="YK6-Un-RwW"/>
                                                     <constraint firstItem="EII-jq-3MW" firstAttribute="leading" secondItem="1hL-lF-2Id" secondAttribute="leading" id="abX-V9-d5p"/>
                                                     <constraint firstAttribute="bottom" secondItem="EII-jq-3MW" secondAttribute="bottom" id="lgr-z1-a3W"/>
@@ -287,9 +295,9 @@
                                                         <rect key="frame" x="6" y="0.0" width="370" height="32"/>
                                                         <segments>
                                                             <segment title="1km"/>
+                                                            <segment title="2km"/>
+                                                            <segment title="3km"/>
                                                             <segment title="5km"/>
-                                                            <segment title="10km"/>
-                                                            <segment title="20km"/>
                                                         </segments>
                                                     </segmentedControl>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unr-JG-fpc" customClass="PaddingLabel" customModule="BecomeTheMaster" customModuleProvider="target">
@@ -358,6 +366,12 @@
                                                         <color key="textColor" name="SignatureNWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="분야를 설정 해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWC-zU-0zT">
+                                                        <rect key="frame" x="65.5" y="3" width="104" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="hXa-nk-2L7">
                                                         <rect key="frame" x="366" y="2" width="16" height="16"/>
                                                         <color key="tintColor" name="SignatureNWhite"/>
@@ -374,6 +388,7 @@
                                                     <constraint firstItem="Eew-VJ-Laf" firstAttribute="leading" secondItem="2Oy-UM-HcE" secondAttribute="leading" id="F9Y-jn-LEf"/>
                                                     <constraint firstAttribute="bottom" secondItem="Eew-VJ-Laf" secondAttribute="bottom" id="IQY-Gg-b8Y"/>
                                                     <constraint firstItem="Eew-VJ-Laf" firstAttribute="top" secondItem="2Oy-UM-HcE" secondAttribute="top" id="M42-5P-x4X"/>
+                                                    <constraint firstItem="mWC-zU-0zT" firstAttribute="centerY" secondItem="Eew-VJ-Laf" secondAttribute="centerY" id="Qu8-e3-vDq"/>
                                                     <constraint firstItem="SVt-vJ-yYs" firstAttribute="top" secondItem="2Oy-UM-HcE" secondAttribute="top" id="Rqq-8Y-LTE"/>
                                                     <constraint firstItem="hXa-nk-2L7" firstAttribute="top" secondItem="2Oy-UM-HcE" secondAttribute="top" constant="2" id="bYZ-VW-CCg"/>
                                                     <constraint firstAttribute="trailing" secondItem="hXa-nk-2L7" secondAttribute="trailing" id="dHX-OH-Nhl"/>
@@ -382,6 +397,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="hXa-nk-2L7" secondAttribute="bottom" constant="2" id="onw-7H-Qe1"/>
                                                     <constraint firstAttribute="trailing" secondItem="SVt-vJ-yYs" secondAttribute="trailing" id="piV-ht-6gh"/>
                                                     <constraint firstAttribute="height" constant="20" id="pqV-Wp-fy5"/>
+                                                    <constraint firstItem="mWC-zU-0zT" firstAttribute="leading" secondItem="Eew-VJ-Laf" secondAttribute="trailing" constant="6" id="v0C-zq-kns"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G32-zb-vx3" customClass="PaddingLabel" customModule="BecomeTheMaster" customModuleProvider="target">
@@ -423,7 +439,7 @@ Label</string>
                                     <constraint firstAttribute="bottom" secondItem="1f7-a2-6Pi" secondAttribute="bottom" constant="10" id="mAg-wo-wrM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ho8-Ql-gpB" userLabel="FieldSetting">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ho8-Ql-gpB" userLabel="DaySetting">
                                 <rect key="frame" x="10" y="401" width="394" height="79.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요일 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eb-Kp-cIh">
@@ -604,7 +620,7 @@ Label</string>
                                     <constraint firstItem="3Bo-iL-dDd" firstAttribute="top" secondItem="NHH-sM-eUI" secondAttribute="bottom" constant="10" id="zEz-Pe-aah"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qZ-Lj-fr2" userLabel="FieldSetting">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qZ-Lj-fr2" userLabel="TimeSetting">
                                 <rect key="frame" x="10" y="490.5" width="394" height="79.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbm-El-1Wj">
@@ -758,7 +774,9 @@ Label</string>
                     </navigationItem>
                     <connections>
                         <outlet property="dayBgView" destination="NHH-sM-eUI" id="iYq-tI-3ub"/>
+                        <outlet property="fieldHelpLabel" destination="mWC-zU-0zT" id="aLu-Jt-KzK"/>
                         <outlet property="fieldUpdateButton" destination="SVt-vJ-yYs" id="5R7-qT-s9W"/>
+                        <outlet property="locationHelpLabel" destination="6og-Vs-p9q" id="MRt-e7-tpe"/>
                         <outlet property="locationUpdateButton" destination="bnK-fr-DPt" id="CCZ-kP-udg"/>
                         <outlet property="segmentForRadius" destination="0R6-EM-TIc" id="52y-4d-utO"/>
                         <outlet property="selectedFieldLabel" destination="G32-zb-vx3" id="fF8-UK-9rj"/>
@@ -961,13 +979,13 @@ Label</string>
     </scenes>
     <designables>
         <designable name="G32-zb-vx3">
-            <size key="intrinsicContentSize" width="36" height="84"/>
+            <size key="intrinsicContentSize" width="48" height="84"/>
         </designable>
         <designable name="XC6-94-zdN">
             <size key="intrinsicContentSize" width="150" height="26"/>
         </designable>
         <designable name="unr-JG-fpc">
-            <size key="intrinsicContentSize" width="36" height="17"/>
+            <size key="intrinsicContentSize" width="48" height="17"/>
         </designable>
     </designables>
     <resources>
