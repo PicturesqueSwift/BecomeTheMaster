@@ -29,6 +29,23 @@ class MainViewController: BaseViewController {
         collectionView.reloadData()
         buttonBind()
         
+        FirebaseManager.shared.cloudDB
+            .collection("Field").document("Data")
+            .getDocument { (doc, err) in
+                if let err = err {
+                    DEBUG_LOG(err.localizedDescription)
+                    return
+                }
+                
+                if let doc = doc, let data = doc.data(), doc.exists {
+                    for dict in data {
+                        if dict.key == "사진&영상" {
+                            DEBUG_LOG(String(dict.value))
+                        }
+                    }
+                }
+            }
+        
     }
     
 }
@@ -107,4 +124,9 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         
         return 8
     }
+}
+
+extension MainViewController {
+    
+    
 }
