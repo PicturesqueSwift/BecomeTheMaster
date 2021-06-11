@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    
     var wrapViewController: UINavigationController {
         return UINavigationController(rootViewController: self)
     }

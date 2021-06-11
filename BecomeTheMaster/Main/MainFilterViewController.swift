@@ -17,7 +17,6 @@ class MainFilterViewController: BaseViewController, StoryboardView {
     
     //지역 설정
     @IBOutlet weak var locationUpdateButton: UIButton!
-    @IBOutlet weak var selectedLocationLabel: PaddingLabel!
     @IBOutlet weak var segmentForRadius: UISegmentedControl!
     @IBOutlet weak var setRadiusView: UIView!
     @IBOutlet weak var locationHelpLabel: UILabel!
@@ -66,8 +65,8 @@ extension MainFilterViewController {
         reactor.state
             .map{ $0.neighborhoodCount }.debug("Neigborhood Count")
             .withLatestFrom(selectedAddress) { ($0, $1) }
-            .map { "\($0.1.addressName) - 주변 동네 \($0.0)개" }
-            .bind(to: selectedLocationLabel.rx.text)
+            .map { ($0.1.addressName, $0.0) } // "\($0.1.addressName) - 주변 동네 \($0.0)개"
+            .bind(to: rx.setLocationLabel)
             .disposed(by: disposeBag)
         
         //MARK: Bindable With IBOutlet
@@ -79,12 +78,19 @@ extension MainFilterViewController {
                 self.navigationController?.pushViewController(vieWController, animated: true)
             }).disposed(by: disposeBag)
 
+        fieldUpdateButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                guard let `self` = self else { return }
+                let vieWController = SelectFieldViewController.viewController("Main")
+                self.navigationController?.pushViewController(vieWController, animated: true)
+            }).disposed(by: disposeBag)
+        
         dayButtons.forEach { button in
             button.rx.tap
                 .do(onNext: { [weak self] _ in
                     self?.updateButtonShadow(isSelected: button.isSelected, sender: button)
                 }).subscribe { _ in
-                    DEBUG_LOG(button.currentTitle)
+                    DEBUG_LOG(button.currentTitle ?? "")
                 }.disposed(by: disposeBag)
         }
 
@@ -93,7 +99,7 @@ extension MainFilterViewController {
                 .do(onNext: { [weak self] _ in
                     self?.updateButtonShadow(isSelected: button.isSelected, sender: button)
                 }).subscribe { _ in
-                    DEBUG_LOG(button.currentTitle)
+                    DEBUG_LOG(button.currentTitle ?? "")
                 }.disposed(by: disposeBag)
         }
         
@@ -102,7 +108,7 @@ extension MainFilterViewController {
             .debounce(RxTimeInterval.milliseconds(200), scheduler: MainScheduler.asyncInstance)
             .do(onNext: { [weak self] _ in
                 self?.setRadiusView.isHidden = false
-                self?.locationHelpLabel.isHidden = true
+                //self?.locationHelpLabel.isHidden = true
             })
             .map { (data, index) -> MainFilterReactor.Action in
                 let radius = index == 3 ? "5000" : index == 2 ? "3000" : index == 1 ? "2000" : "1000"
@@ -146,4 +152,19 @@ extension MainFilterViewController {
         
     }
 
+}
+
+extension Reactive where Base: MainFilterViewController {
+    
+    var setLocationLabel: Binder<(String, Int)> {
+        return Binder(base) { viewController, addressInfo in
+            let addr = addressInfo.0 == "" ? "지역을 설정해주세요." : "\(addressInfo.0) - 주변 동네 \(addressInfo.1)개"
+            let color: UIColor = addressInfo.0 == "" ? .lightGray : .black
+            let font: UIFont = addressInfo.0 == "" ? .systemFont(ofSize: 12) : .systemFont(ofSize: 14, weight: .semibold)
+            viewController.locationHelpLabel.text = addr
+            viewController.locationHelpLabel.textColor = color
+            viewController.locationHelpLabel.font = font
+        }
+    }
+    
 }

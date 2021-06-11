@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA141DBE26719A8000FDAC5D /* SelectFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA141DBD26719A8000FDAC5D /* SelectFieldViewController.swift */; };
 		DA288FAC25DCA78C00B293B6 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA288FAB25DCA78C00B293B6 /* FirebaseManager.swift */; };
 		DA288FAF25DCAE5A00B293B6 /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA288FAE25DCAE5A00B293B6 /* PhotoManager.swift */; };
 		DA288FB225DCAF4800B293B6 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA288FB125DCAF4800B293B6 /* UIImage+Ex.swift */; };
@@ -28,10 +29,13 @@
 		DA65D73425CA36A800238A26 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65D73325CA36A800238A26 /* String+Ex.swift */; };
 		DA65D73F25CA563300238A26 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65D73A25CA4FEF00238A26 /* PaddingLabel.swift */; };
 		DA6B6577261172CA00D761D6 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B6576261172CA00D761D6 /* App.swift */; };
+		DA6E734026704A3700C2DBC3 /* City.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA6E733F26704A3700C2DBC3 /* City.txt */; };
 		DA72C39425DB4F3A0096ABC5 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA72C39325DB4F3A0096ABC5 /* Localized.strings */; };
 		DA75159726009D540093B800 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75159626009D540093B800 /* API.swift */; };
 		DA75159C26009F410093B800 /* KakaoRestAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75159B26009F410093B800 /* KakaoRestAPIModel.swift */; };
 		DA7A11032603451B008D2899 /* SearchAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7A11022603451B008D2899 /* SearchAddressViewController.swift */; };
+		DA9AA682266EF72B0077A8E1 /* Category+Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9AA681266EF72B0077A8E1 /* Category+Field.swift */; };
+		DA9AA684266EFFA80077A8E1 /* Array+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9AA683266EFFA80077A8E1 /* Array+Ex.swift */; };
 		DAA5FD4F2615898B00805689 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5FD4E2615898A00805689 /* UIView+Ex.swift */; };
 		DAA5FD542615A48F00805689 /* MainFilterReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5FD532615A48F00805689 /* MainFilterReactor.swift */; };
 		DACCCC562612BF0B00EE4865 /* SearchAddressReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCCC552612BF0B00EE4865 /* SearchAddressReactor.swift */; };
@@ -75,6 +79,7 @@
 /* Begin PBXFileReference section */
 		082A6ED58E80D09E1F6826E8 /* Pods-BecomeTheMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BecomeTheMaster.release.xcconfig"; path = "Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster.release.xcconfig"; sourceTree = "<group>"; };
 		7AFD17F57A0C30942D973B2A /* Pods_BecomeTheMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BecomeTheMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA141DBD26719A8000FDAC5D /* SelectFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFieldViewController.swift; sourceTree = "<group>"; };
 		DA288FAB25DCA78C00B293B6 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DA288FAE25DCAE5A00B293B6 /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
 		DA288FB125DCAF4800B293B6 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
@@ -96,10 +101,13 @@
 		DA65D73325CA36A800238A26 /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		DA65D73A25CA4FEF00238A26 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		DA6B6576261172CA00D761D6 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		DA6E733F26704A3700C2DBC3 /* City.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = City.txt; sourceTree = "<group>"; };
 		DA72C39325DB4F3A0096ABC5 /* Localized.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localized.strings; sourceTree = "<group>"; };
 		DA75159626009D540093B800 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DA75159B26009F410093B800 /* KakaoRestAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoRestAPIModel.swift; sourceTree = "<group>"; };
 		DA7A11022603451B008D2899 /* SearchAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressViewController.swift; sourceTree = "<group>"; };
+		DA9AA681266EF72B0077A8E1 /* Category+Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+Field.swift"; sourceTree = "<group>"; };
+		DA9AA683266EFFA80077A8E1 /* Array+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ex.swift"; sourceTree = "<group>"; };
 		DAA5FD4E2615898A00805689 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		DAA5FD532615A48F00805689 /* MainFilterReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFilterReactor.swift; sourceTree = "<group>"; };
 		DACCCC552612BF0B00EE4865 /* SearchAddressReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressReactor.swift; sourceTree = "<group>"; };
@@ -304,6 +312,7 @@
 				FF98942225C655B20021F8AF /* MainViewController.swift */,
 				DA41181125DF3B33007A1BE5 /* MainFilterViewController.swift */,
 				DA7A11022603451B008D2899 /* SearchAddressViewController.swift */,
+				DA141DBD26719A8000FDAC5D /* SelectFieldViewController.swift */,
 				FF98942825C655B20021F8AF /* TabBarController.swift */,
 			);
 			path = Main;
@@ -358,6 +367,7 @@
 				FF98943525C655B30021F8AF /* UIColor+Ex.swift */,
 				DA65D73325CA36A800238A26 /* String+Ex.swift */,
 				DACCCC5C2612F32A00EE4865 /* Double+Ex.swift */,
+				DA9AA683266EFFA80077A8E1 /* Array+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -407,6 +417,8 @@
 				FF98944825C655B30021F8AF /* ViewControllerFromStoryboard.swift */,
 				FF98944B25C655B30021F8AF /* BaseViewController.swift */,
 				FF98944925C655B30021F8AF /* Utils.swift */,
+				DA9AA681266EF72B0077A8E1 /* Category+Field.swift */,
+				DA6E733F26704A3700C2DBC3 /* City.txt */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -474,6 +486,7 @@
 				FF98946425C655B30021F8AF /* Contract.storyboard in Resources */,
 				FF6681F725C53AD70041E617 /* LaunchScreen.storyboard in Resources */,
 				DA72C39425DB4F3A0096ABC5 /* Localized.strings in Resources */,
+				DA6E734026704A3700C2DBC3 /* City.txt in Resources */,
 				FF98945125C655B30021F8AF /* Messenger.storyboard in Resources */,
 				FF98940025C654890021F8AF /* Color.xcassets in Resources */,
 				FF9893FF25C654890021F8AF /* Assets.xcassets in Resources */,
@@ -536,11 +549,13 @@
 				DA41185325DF564F007A1BE5 /* StarLayer.swift in Sources */,
 				DA61665825DE2C5900C13DA0 /* MainFullCell.swift in Sources */,
 				DA41185B25DF59DB007A1BE5 /* StarRateLayers.swift in Sources */,
+				DA141DBE26719A8000FDAC5D /* SelectFieldViewController.swift in Sources */,
 				DA288FB225DCAF4800B293B6 /* UIImage+Ex.swift in Sources */,
 				DA41181625DF4C60007A1BE5 /* StarRateView.swift in Sources */,
 				FF6681EB25C53AD60041E617 /* AppDelegate.swift in Sources */,
 				DA41186125DF5B75007A1BE5 /* RightToLeft.swift in Sources */,
 				DA41181225DF3B33007A1BE5 /* MainFilterViewController.swift in Sources */,
+				DA9AA682266EF72B0077A8E1 /* Category+Field.swift in Sources */,
 				FF98946025C655B30021F8AF /* SelectUserTypeViewController.swift in Sources */,
 				DA288FAF25DCAE5A00B293B6 /* PhotoManager.swift in Sources */,
 				FF98945625C655B30021F8AF /* UIViewController+Ex.swift in Sources */,
@@ -564,6 +579,7 @@
 				FF98945A25C655B30021F8AF /* UIApplication+Ex.swift in Sources */,
 				FF98944C25C655B30021F8AF /* MainViewController.swift in Sources */,
 				DA7A11032603451B008D2899 /* SearchAddressViewController.swift in Sources */,
+				DA9AA684266EFFA80077A8E1 /* Array+Ex.swift in Sources */,
 				DA61665C25DE48B900C13DA0 /* MainHorizontalCell.swift in Sources */,
 				FF98945425C655B30021F8AF /* Router.swift in Sources */,
 				DA41184525DF549C007A1BE5 /* StarRateTouch.swift in Sources */,

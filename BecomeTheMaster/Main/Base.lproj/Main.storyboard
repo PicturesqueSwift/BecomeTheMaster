@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rz7-MS-8nZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rz7-MS-8nZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -136,6 +136,69 @@
             </objects>
             <point key="canvasLocation" x="-2284" y="804"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bmg-fF-fbz">
+            <objects>
+                <navigationController id="UfO-zO-JZv" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xop-XA-PlR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="d4P-Nv-oKp" kind="relationship" relationship="rootViewController" id="aga-KQ-mvy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kH9-v6-EYL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2284" y="1529"/>
+        </scene>
+        <!--분야 설정-->
+        <scene sceneID="hRW-Zd-WU0">
+            <objects>
+                <viewController storyboardIdentifier="SelectFieldViewController" id="d4P-Nv-oKp" customClass="SelectFieldViewController" customModule="BecomeTheMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GNE-pj-VEx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9tY-wI-3SE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WUT-xq-dmO">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WUT-xq-dmO" id="xNM-f4-ejH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="465-hD-3zU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9tY-wI-3SE" firstAttribute="leading" secondItem="465-hD-3zU" secondAttribute="leading" id="BGa-GA-V1U"/>
+                            <constraint firstItem="465-hD-3zU" firstAttribute="bottom" secondItem="9tY-wI-3SE" secondAttribute="bottom" id="P4T-8h-TuR"/>
+                            <constraint firstItem="465-hD-3zU" firstAttribute="trailing" secondItem="9tY-wI-3SE" secondAttribute="trailing" id="glm-8V-9Cz"/>
+                            <constraint firstItem="9tY-wI-3SE" firstAttribute="top" secondItem="465-hD-3zU" secondAttribute="top" id="ldR-hx-3oQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="분야 설정" id="VlR-vJ-h4g">
+                        <barButtonItem key="leftBarButtonItem" image="Navi_Back" id="80Z-RD-iXU">
+                            <connections>
+                                <action selector="backButton:" destination="d4P-Nv-oKp" id="ulr-b1-t7Q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="9tY-wI-3SE" id="5Jx-2f-wqs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQj-i6-dCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1330" y="1529"/>
+        </scene>
         <!--지역 설정-->
         <scene sceneID="W7k-VF-De4">
             <objects>
@@ -149,7 +212,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yym-HT-KzG">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yym-HT-KzG" id="RGm-sB-Crf">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -292,7 +355,7 @@
                                                 <rect key="frame" x="0.0" y="30" width="382" height="55"/>
                                                 <subviews>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0R6-EM-TIc">
-                                                        <rect key="frame" x="6" y="0.0" width="370" height="32"/>
+                                                        <rect key="frame" x="6" y="0.0" width="370" height="50"/>
                                                         <segments>
                                                             <segment title="1km"/>
                                                             <segment title="2km"/>
@@ -300,28 +363,11 @@
                                                             <segment title="5km"/>
                                                         </segments>
                                                     </segmentedControl>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unr-JG-fpc" customClass="PaddingLabel" customModule="BecomeTheMaster" customModuleProvider="target">
-                                                        <rect key="frame" x="2" y="37" width="378" height="18"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="18" id="yrN-b5-CUz"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="size" keyPath="inset">
-                                                                <size key="value" width="6" height="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="unr-JG-fpc" firstAttribute="leading" secondItem="0qv-9K-sw3" secondAttribute="leading" constant="2" id="2pg-MC-92n"/>
-                                                    <constraint firstAttribute="bottom" secondItem="unr-JG-fpc" secondAttribute="bottom" id="9Ph-dv-hQk"/>
-                                                    <constraint firstAttribute="trailing" secondItem="unr-JG-fpc" secondAttribute="trailing" constant="2" id="av3-kZ-gIw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0R6-EM-TIc" secondAttribute="bottom" constant="6" id="VGc-e7-L4i"/>
                                                     <constraint firstItem="0R6-EM-TIc" firstAttribute="leading" secondItem="0qv-9K-sw3" secondAttribute="leading" constant="6" id="cWg-4a-XzR"/>
-                                                    <constraint firstItem="unr-JG-fpc" firstAttribute="top" secondItem="0R6-EM-TIc" secondAttribute="bottom" constant="6" id="de6-gB-fdk"/>
                                                     <constraint firstItem="0R6-EM-TIc" firstAttribute="top" secondItem="0qv-9K-sw3" secondAttribute="top" id="eF5-Pk-hLq"/>
                                                     <constraint firstAttribute="trailing" secondItem="0R6-EM-TIc" secondAttribute="trailing" constant="6" id="ze8-oL-DLz"/>
                                                 </constraints>
@@ -366,8 +412,8 @@
                                                         <color key="textColor" name="SignatureNWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="분야를 설정 해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWC-zU-0zT">
-                                                        <rect key="frame" x="65.5" y="3" width="104" height="14.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="분야를 설정 해주세요. (최대 3개)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWC-zU-0zT">
+                                                        <rect key="frame" x="65.5" y="3" width="158.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -780,7 +826,6 @@ Label</string>
                         <outlet property="locationUpdateButton" destination="bnK-fr-DPt" id="CCZ-kP-udg"/>
                         <outlet property="segmentForRadius" destination="0R6-EM-TIc" id="52y-4d-utO"/>
                         <outlet property="selectedFieldLabel" destination="G32-zb-vx3" id="fF8-UK-9rj"/>
-                        <outlet property="selectedLocationLabel" destination="unr-JG-fpc" id="ajV-Gz-zhH"/>
                         <outlet property="setRadiusView" destination="0qv-9K-sw3" id="qH6-Zc-6Qd"/>
                         <outlet property="starRateView" destination="XC6-94-zdN" id="gbg-cB-CfI"/>
                         <outlet property="timeBgView" destination="Mvh-6e-xix" id="WJe-en-sOT"/>
@@ -983,9 +1028,6 @@ Label</string>
         </designable>
         <designable name="XC6-94-zdN">
             <size key="intrinsicContentSize" width="150" height="26"/>
-        </designable>
-        <designable name="unr-JG-fpc">
-            <size key="intrinsicContentSize" width="48" height="17"/>
         </designable>
     </designables>
     <resources>
