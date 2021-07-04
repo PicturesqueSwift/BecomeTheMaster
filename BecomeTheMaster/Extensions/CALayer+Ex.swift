@@ -15,6 +15,32 @@ extension CALayer {
         self.cornerRadius = cornerRadius
     }
     
+    func addBorder(_ arrEdge: [UIRectEdge], color: UIColor, width: CGFloat) {
+        for edge in arrEdge {
+            let border = CALayer()
+
+            switch edge {
+            case UIRectEdge.top:
+                border.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: width)
+                break
+            case UIRectEdge.bottom:
+                border.frame = CGRect.init(x: 0, y: frame.height - width, width: frame.width, height: width)
+                break
+            case UIRectEdge.left:
+                border.frame = CGRect.init(x: 0, y: 0, width: width, height: frame.height)
+                break
+            case UIRectEdge.right:
+                border.frame = CGRect.init(x: frame.width - width, y: 0, width: width, height: frame.height)
+                break
+            default:
+                border.frame = CGRect.zero
+                break
+            }
+            border.backgroundColor = color.cgColor;
+            self.addSublayer(border)
+        }
+    }
+    
     public func addEachBoader(_ edge: [UIRectEdge], color: UIColor, width: CGFloat = 1) {
         edge.forEach {
             let border = CALayer()
@@ -27,16 +53,16 @@ extension CALayer {
                 return
             
             case .top:
-                border.frame = CGRect(x: 0, y: 0, width: frame.width, height: width)
+                border.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: width)
                 
             case .bottom:
-                border.frame = CGRect(x: 0, y: 0, width: frame.width, height: width)
+                border.frame = CGRect.init(x: 0, y: frame.height - width, width: frame.width, height: width)
                 
             case .left:
-                border.frame = CGRect(x: 0, y: 0, width: frame.width, height: width)
-                
+                border.frame = CGRect.init(x: 0, y: 0, width: width, height: frame.height)
+
             case .right:
-                border.frame = CGRect(x: 0, y: 0, width: frame.width, height: width)
+                border.frame = CGRect.init(x: frame.width - width, y: 0, width: width, height: frame.height)
                 
             default:
                 border.frame = CGRect.zero

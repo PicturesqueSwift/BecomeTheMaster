@@ -49,6 +49,7 @@ class StarRateLayers {
 
     */
     class func createCompositeStarLayer(_ starFillLevel: Double, settings: StarRateSettings, isRightToLeft: Bool) -> CALayer {
+        
         if starFillLevel >= 1 {
             return createStarLayer(.full, isFilled: true, settings: settings)
         }

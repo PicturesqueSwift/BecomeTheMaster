@@ -40,6 +40,7 @@ class MainFilterViewController: BaseViewController, StoryboardView {
     
     //Subject & Relay
     var selectedAddress: PublishSubject<KakaoRestAPIModel.AddressSearch.Document> = PublishSubject()
+    var selectedFieldCategory: PublishSubject<[String]> = PublishSubject()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +83,7 @@ extension MainFilterViewController {
             .subscribe(onNext: { [weak self] _ in
                 guard let `self` = self else { return }
                 let vieWController = SelectFieldViewController.viewController("Main")
+                vieWController.selectedFieldCategory = self.selectedFieldCategory
                 self.navigationController?.pushViewController(vieWController, animated: true)
             }).disposed(by: disposeBag)
         
@@ -115,6 +117,18 @@ extension MainFilterViewController {
                 return MainFilterReactor.Action.findNeighborhood(data: data, radius: radius)
             }.bind(to: reactor.action)
             .disposed(by: disposeBag)
+        
+        selectedFieldCategory
+            .map { $0.sorted() }
+            .subscribe(onNext: { [weak self] category in
+                let string = category.reduce("", { $0 + "\n" + $1 })
+                let attrString = NSMutableAttributedString(string: string)
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = 4
+                attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+                self?.selectedFieldLabel.attributedText = attrString
+                self?.selectedFieldLabel.isHidden = false
+            }).disposed(by: disposeBag)
         
     }
 

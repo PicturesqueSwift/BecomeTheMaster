@@ -170,7 +170,7 @@ struct StarRateDefaultSettings {
     // -----------------------------
 
     /// The lowest rating that user can set by touching the stars.
-    static let minTouchRating: Double = 1
+    static let minTouchRating: Double = 0.5
 
     /// Set to `false` if you don't want to pass touches to superview (can be useful in a table view).
     static let passTouchesToSuperview = true

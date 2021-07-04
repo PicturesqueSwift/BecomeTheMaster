@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0AFCDD2675DF660069484A /* TableBasicSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA0AFCDC2675DF660069484A /* TableBasicSectionView.xib */; };
+		DA0AFCDF2675DF7A0069484A /* TableBasicSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0AFCDE2675DF7A0069484A /* TableBasicSectionView.swift */; };
 		DA141DBE26719A8000FDAC5D /* SelectFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA141DBD26719A8000FDAC5D /* SelectFieldViewController.swift */; };
 		DA288FAC25DCA78C00B293B6 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA288FAB25DCA78C00B293B6 /* FirebaseManager.swift */; };
 		DA288FAF25DCAE5A00B293B6 /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA288FAE25DCAE5A00B293B6 /* PhotoManager.swift */; };
@@ -79,6 +81,8 @@
 /* Begin PBXFileReference section */
 		082A6ED58E80D09E1F6826E8 /* Pods-BecomeTheMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BecomeTheMaster.release.xcconfig"; path = "Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster.release.xcconfig"; sourceTree = "<group>"; };
 		7AFD17F57A0C30942D973B2A /* Pods_BecomeTheMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BecomeTheMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA0AFCDC2675DF660069484A /* TableBasicSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableBasicSectionView.xib; sourceTree = "<group>"; };
+		DA0AFCDE2675DF7A0069484A /* TableBasicSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableBasicSectionView.swift; sourceTree = "<group>"; };
 		DA141DBD26719A8000FDAC5D /* SelectFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFieldViewController.swift; sourceTree = "<group>"; };
 		DA288FAB25DCA78C00B293B6 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DA288FAE25DCAE5A00B293B6 /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 		DA3CF63D25C795AC00918767 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA9AA681266EF72B0077A8E1 /* Category+Field.swift */,
 				DACCCC592612DFE100EE4865 /* LongitudeAndLatitude.swift */,
 			);
 			path = Model;
@@ -417,8 +422,9 @@
 				FF98944825C655B30021F8AF /* ViewControllerFromStoryboard.swift */,
 				FF98944B25C655B30021F8AF /* BaseViewController.swift */,
 				FF98944925C655B30021F8AF /* Utils.swift */,
-				DA9AA681266EF72B0077A8E1 /* Category+Field.swift */,
 				DA6E733F26704A3700C2DBC3 /* City.txt */,
+				DA0AFCDC2675DF660069484A /* TableBasicSectionView.xib */,
+				DA0AFCDE2675DF7A0069484A /* TableBasicSectionView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -483,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF98945E25C655B30021F8AF /* Login.storyboard in Resources */,
+				DA0AFCDD2675DF660069484A /* TableBasicSectionView.xib in Resources */,
 				FF98946425C655B30021F8AF /* Contract.storyboard in Resources */,
 				FF6681F725C53AD70041E617 /* LaunchScreen.storyboard in Resources */,
 				DA72C39425DB4F3A0096ABC5 /* Localized.strings in Resources */,
@@ -596,6 +603,7 @@
 				FF98945225C655B30021F8AF /* SettingViewController.swift in Sources */,
 				FF98945525C655B30021F8AF /* Auth+Rx.swift in Sources */,
 				DA41184825DF54BB007A1BE5 /* StarRating.swift in Sources */,
+				DA0AFCDF2675DF7A0069484A /* TableBasicSectionView.swift in Sources */,
 				FF98946125C655B30021F8AF /* SelectLoginViewController.swift in Sources */,
 				DA41184225DF546A007A1BE5 /* StarRateSize.swift in Sources */,
 				DA75159C26009F410093B800 /* KakaoRestAPIModel.swift in Sources */,
