@@ -11,6 +11,9 @@ import Foundation
 /*
  경위도: 그 표면 지점의 수직 백터에 따라 그 백터의 방향을 수치화 한 것 (경도와 위도가 만나는 점)
  경도(longitude): 지도에서 세로로 그려진 선, 위도(latitude): 지도에서 가로로 그려진 선
+ 
+ Geocoding: 고유명칭(주소나 산,호수의 이름등)을 가지고 위도와 경도의 좌표값를 얻는 것.
+ reverse Geocoding: 위도와 경도값으로부터 고유명칭을 얻는 것.
  */
 
 struct LongitudeAndLatitude: Equatable {
@@ -66,3 +69,4 @@ extension LongitudeAndLatitude {
  
  출처 : https://www.geodatasource.com/resources/tutorials/how-to-calculate-the-distance-between-2-locations-using-php/
  */
+

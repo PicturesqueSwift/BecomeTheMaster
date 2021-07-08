@@ -11,6 +11,9 @@ import RxSwift
 
 class BaseViewController: UIViewController, ViewControllerFromStoryboard {
 
+    lazy var scrollContentOffset: PublishSubject<CGPoint> = PublishSubject()
+    lazy var scrollIsEndDrag: PublishSubject<Bool> = PublishSubject()
+    
     var disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -35,11 +38,30 @@ extension BaseViewController: UIGestureRecognizerDelegate {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 17),
-                                                                        .foregroundColor: UIColor.init(named: "SignatureNWhite")!]
-        self.navigationController?.navigationBar.barTintColor = UIColor.init(named: "WhiteNBlack")
-        self.navigationController?.navigationBar.tintColor = UIColor.init(named: "SignatureNWhite")
+                                                                        .foregroundColor: UIColor.signatureNWhite]
+        self.navigationController?.navigationBar.barTintColor = UIColor.whiteNBlack
+        self.navigationController?.navigationBar.tintColor = UIColor.signatureNWhite
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
+    }
+    
+}
+
+extension BaseViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollContentOffset.onNext(scrollView.contentOffset)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollIsEndDrag.onNext(true)
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        scrollIsEndDrag.onNext(true)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrollIsEndDrag.onNext(false)
     }
     
 }

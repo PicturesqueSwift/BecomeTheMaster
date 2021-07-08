@@ -188,14 +188,14 @@ extension PhotoManager {
         //config.library.defaultMultipleSelection = maxNumberOfItems == 1 ? false : true
         config.library.preSelectItemOnMultipleSelection = false
 
-        config.colors.tintColor = UIColor(named: "SignatureNWhite")!
+        config.colors.tintColor = .signatureNWhite
         config.colors.multipleItemsSelectedCircleColor = UIColor.colorFromRGB(0x4b6293)
         
         let picker = YPImagePicker(configuration: config)
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().tintColor = UIColor(named: "SignatureNWhite")!
+        UINavigationBar.appearance().tintColor = .signatureNWhite
         UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 17),
-                                                                          .foregroundColor: UIColor.init(named: "SignatureNWhite")!]
+                                                            .foregroundColor: UIColor.signatureNWhite]
         
         YPImagePickerConfiguration.shared = config
         

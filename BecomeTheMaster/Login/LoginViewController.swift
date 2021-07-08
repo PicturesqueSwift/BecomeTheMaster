@@ -24,10 +24,9 @@ class LoginViewController: BaseViewController {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        if let color = UIColor(named: "SignatureNWhite") {
-            emailTextField.layer.borderColor = color.cgColor
-            pwdTextField.layer.borderColor = color.cgColor
-        }
+        let color = UIColor.signatureNWhite
+        emailTextField.layer.borderColor = color.cgColor
+        pwdTextField.layer.borderColor = color.cgColor
     }
     
     @IBAction func closeButton(_ sender: Any) {
@@ -51,8 +50,9 @@ extension LoginViewController {
     }
     
     private func initializedConfigure() {
-        emailTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
-        pwdTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
-        loginButton.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
+        let color = UIColor.signatureNWhite
+        emailTextField.layer.addBasicBorder(color: color, width: 0.5, cornerRadius: 5)
+        pwdTextField.layer.addBasicBorder(color: color, width: 0.5, cornerRadius: 5)
+        loginButton.layer.addBasicBorder(color: color, width: 0.5, cornerRadius: 5)
     }
 }

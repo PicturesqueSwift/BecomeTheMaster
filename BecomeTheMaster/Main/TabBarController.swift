@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainTabBar.unselectedItemTintColor = UIColor(named: "SignatureNWhite")
+        mainTabBar.unselectedItemTintColor = .signatureNWhite
         
         DispatchQueue.main.async { // wait until MainTabBarController is inside UI
             let viewContoller = SelectLoginViewController.viewController(true).wrapViewController

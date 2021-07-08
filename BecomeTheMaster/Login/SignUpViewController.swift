@@ -42,13 +42,12 @@ class SignUpViewController: BaseViewController, StoryboardView {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        if let color = UIColor(named: "SignatureNWhite") {
-            emailTextField.layer.borderColor = color.cgColor
-            pwdTextField.layer.borderColor = color.cgColor
-            pwdCheckTextField.layer.borderColor = color.cgColor
-            nickNameTextField.layer.borderColor = color.cgColor
-            profileImage.layer.borderColor = color.withAlphaComponent(0.2).cgColor
-        }
+        let color: UIColor = .signatureNWhite
+        emailTextField.layer.borderColor = color.cgColor
+        pwdTextField.layer.borderColor = color.cgColor
+        pwdCheckTextField.layer.borderColor = color.cgColor
+        nickNameTextField.layer.borderColor = color.cgColor
+        profileImage.layer.borderColor = color.withAlphaComponent(0.2).cgColor
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -80,7 +79,7 @@ extension SignUpViewController {
             .map { $0.doneEnable }
             .subscribe(onNext: { [weak self] isEnable in
                 self?.completeButton.isEnabled = isEnable
-                self?.completeButton.backgroundColor = UIColor(named: "SignatureNWhite")
+                self?.completeButton.backgroundColor = .signatureNWhite
             }).disposed(by: disposeBag)
         
         reactor.state
@@ -156,15 +155,15 @@ extension SignUpViewController {
 extension SignUpViewController {
     private func initializedConfigure() {
         self.reactor = SignUpReactor()
-        
+        let color = UIColor.signatureNWhite
         completeButton.isEnabled = false
-        completeButton.backgroundColor = UIColor(named: "SignatureNWhite")!.withAlphaComponent(0.6)
+        completeButton.backgroundColor = color.withAlphaComponent(0.6)
         completeButton.layer.addBasicBorder(color: .clear, width: 0.5, cornerRadius: 5)
-        emailTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
-        pwdTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
-        pwdCheckTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
-        nickNameTextField.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!, width: 0.5, cornerRadius: 5)
-        profileImage.layer.addBasicBorder(color: UIColor(named: "SignatureNWhite")!.withAlphaComponent(0.2), width: 2, cornerRadius: 27)
+        emailTextField.layer.addBasicBorder(color: color, width: 0.5, cornerRadius: 5)
+        pwdTextField.layer.addBasicBorder(color: color, width: 0.5, cornerRadius: 5)
+        pwdCheckTextField.layer.addBasicBorder(color: color, width: 0.5, cornerRadius: 5)
+        nickNameTextField.layer.addBasicBorder(color: color, width: 0.5, cornerRadius: 5)
+        profileImage.layer.addBasicBorder(color: color.withAlphaComponent(0.2), width: 2, cornerRadius: 27)
         
     }
 }

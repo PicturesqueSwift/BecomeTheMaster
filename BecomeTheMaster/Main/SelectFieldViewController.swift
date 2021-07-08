@@ -157,7 +157,7 @@ extension SelectFieldViewController: UITableViewDelegate, UITableViewDataSource 
         cell.textLabel?.text = title
         cell.textLabel?.font = .systemFont(ofSize: 13)
         cell.selectionStyle = .none
-        cell.tintColor = UIColor(named: "SignatureNWhite")!
+        cell.tintColor = .signatureNWhite
         return cell
     }
     

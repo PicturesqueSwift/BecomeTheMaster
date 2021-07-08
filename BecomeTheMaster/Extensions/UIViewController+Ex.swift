@@ -16,7 +16,7 @@ extension UIViewController {
     }
     
     func viewWithLabel(message: String, height: CGFloat = 30, textAlignment: NSTextAlignment = .center,
-                       textColor: UIColor = UIColor.init(named: "BlackNWhite")!, textFont: UIFont = .systemFont(ofSize: 16, weight: UIFont.Weight.regular)) -> UIView {
+                       textColor: UIColor = .blackNWhite, textFont: UIFont = .systemFont(ofSize: 16, weight: UIFont.Weight.regular)) -> UIView {
         
         let view = UIView(frame: CGRect(x: 0, y: 0, width: APP_WIDTH(), height: height))
         

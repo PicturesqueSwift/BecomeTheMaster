@@ -56,6 +56,16 @@ extension MainViewController {
                 self.navigationController?.pushViewController(viewController, animated: true)
             }).disposed(by: disposeBag)
         
+        collectionView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let `self` = self else { return }
+                let viewController = UserProfileViewController.viewController("Follow")
+                viewController.modalPresentationStyle = .fullScreen
+                self.present(viewController, animated: true, completion: nil)
+                //viewController.hidesBottomBarWhenPushed = true
+                //self.navigationController?.pushViewController(viewController, animated: true)
+            }).disposed(by: disposeBag)
+        
     }
 }
 

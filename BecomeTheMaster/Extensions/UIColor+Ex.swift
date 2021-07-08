@@ -15,4 +15,17 @@ extension UIColor {
                        green: CGFloat((rgbValue & 0xFF00) >> 8) / 255.0,
                        blue: CGFloat(rgbValue & 0xFF) / 255.0, alpha: alpha)
     }
+    
+    open class var signatureNWhite: UIColor {
+        return UIColor(named: "SignatureNWhite")!
+    }
+    
+    open class var whiteNBlack: UIColor {
+        return UIColor(named: "WhiteNBlack")!
+    }
+    
+    open class var blackNWhite: UIColor {
+        return UIColor(named: "BlackNWhite")!
+    }
+    
 }

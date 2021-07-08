@@ -30,8 +30,8 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section View Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gl0-ej-f9b">
-                    <rect key="frame" x="10" y="10" width="139" height="20"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <rect key="frame" x="10.000000000000007" y="10" width="123.66666666666669" height="20"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                     <color key="textColor" name="SignatureNWhite"/>
                     <nil key="highlightedColor"/>
                 </label>

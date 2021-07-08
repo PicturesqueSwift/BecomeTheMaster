@@ -30,10 +30,9 @@ class SelectLoginViewController: BaseViewController {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        if let color = UIColor(named: "BlackNWhite") {
-            googleButton.layer.borderColor = color.cgColor
-            appleButton.layer.borderColor = color.cgColor
-        }
+        let color: UIColor = .blackNWhite
+        googleButton.layer.borderColor = color.cgColor
+        appleButton.layer.borderColor = color.cgColor
     }
 
     static func viewController(_ closeIsHidden: Bool) -> SelectLoginViewController {
@@ -66,10 +65,10 @@ extension SelectLoginViewController {
 
 extension SelectLoginViewController {
     func initializedConfigure() {
-        googleButton.layer.addBasicBorder(color: UIColor(named: "BlackNWhite")!, width: 1, cornerRadius: 5)
+        googleButton.layer.addBasicBorder(color: .blackNWhite, width: 1, cornerRadius: 5)
         kakaoTalkButton.layer.cornerRadius = 5
         naverButton.layer.cornerRadius = 5
         facebookButton.layer.cornerRadius = 5
-        appleButton.layer.addBasicBorder(color: UIColor(named: "BlackNWhite")!, width: 1, cornerRadius: 5)
+        appleButton.layer.addBasicBorder(color: .blackNWhite, width: 1, cornerRadius: 5)
     }
 }

@@ -31,7 +31,6 @@
 		DA65D73425CA36A800238A26 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65D73325CA36A800238A26 /* String+Ex.swift */; };
 		DA65D73F25CA563300238A26 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65D73A25CA4FEF00238A26 /* PaddingLabel.swift */; };
 		DA6B6577261172CA00D761D6 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B6576261172CA00D761D6 /* App.swift */; };
-		DA6E734026704A3700C2DBC3 /* City.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA6E733F26704A3700C2DBC3 /* City.txt */; };
 		DA72C39425DB4F3A0096ABC5 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA72C39325DB4F3A0096ABC5 /* Localized.strings */; };
 		DA75159726009D540093B800 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75159626009D540093B800 /* API.swift */; };
 		DA75159C26009F410093B800 /* KakaoRestAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA75159B26009F410093B800 /* KakaoRestAPIModel.swift */; };
@@ -40,9 +39,14 @@
 		DA9AA684266EFFA80077A8E1 /* Array+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9AA683266EFFA80077A8E1 /* Array+Ex.swift */; };
 		DAA5FD4F2615898B00805689 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5FD4E2615898A00805689 /* UIView+Ex.swift */; };
 		DAA5FD542615A48F00805689 /* MainFilterReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA5FD532615A48F00805689 /* MainFilterReactor.swift */; };
+		DAB86910269540E000EB642C /* UserProfileAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB8690F269540E000EB642C /* UserProfileAboutViewController.swift */; };
 		DACCCC562612BF0B00EE4865 /* SearchAddressReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCCC552612BF0B00EE4865 /* SearchAddressReactor.swift */; };
 		DACCCC5A2612DFE100EE4865 /* LongitudeAndLatitude.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCCC592612DFE100EE4865 /* LongitudeAndLatitude.swift */; };
 		DACCCC5D2612F32A00EE4865 /* Double+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCCC5C2612F32A00EE4865 /* Double+Ex.swift */; };
+		DAF235832693EBF90057A43A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF235822693EBF90057A43A /* MenuView.swift */; };
+		DAF235852693ECA30057A43A /* ScrollingMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAF235842693ECA30057A43A /* ScrollingMenuView.xib */; };
+		DAF235892693F1C50057A43A /* ScrollingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF235882693F1C50057A43A /* ScrollingMenuView.swift */; };
+		DAF2358B269411A60057A43A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2358A269411A60057A43A /* UserProfileViewController.swift */; };
 		E0EE75976545B0980528259A /* Pods_BecomeTheMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFD17F57A0C30942D973B2A /* Pods_BecomeTheMaster.framework */; };
 		FF6681EB25C53AD60041E617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6681EA25C53AD60041E617 /* AppDelegate.swift */; };
 		FF6681F725C53AD70041E617 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6681F525C53AD70041E617 /* LaunchScreen.storyboard */; };
@@ -105,7 +109,6 @@
 		DA65D73325CA36A800238A26 /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		DA65D73A25CA4FEF00238A26 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		DA6B6576261172CA00D761D6 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		DA6E733F26704A3700C2DBC3 /* City.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = City.txt; sourceTree = "<group>"; };
 		DA72C39325DB4F3A0096ABC5 /* Localized.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localized.strings; sourceTree = "<group>"; };
 		DA75159626009D540093B800 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DA75159B26009F410093B800 /* KakaoRestAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoRestAPIModel.swift; sourceTree = "<group>"; };
@@ -114,9 +117,14 @@
 		DA9AA683266EFFA80077A8E1 /* Array+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ex.swift"; sourceTree = "<group>"; };
 		DAA5FD4E2615898A00805689 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		DAA5FD532615A48F00805689 /* MainFilterReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFilterReactor.swift; sourceTree = "<group>"; };
+		DAB8690F269540E000EB642C /* UserProfileAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileAboutViewController.swift; sourceTree = "<group>"; };
 		DACCCC552612BF0B00EE4865 /* SearchAddressReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressReactor.swift; sourceTree = "<group>"; };
 		DACCCC592612DFE100EE4865 /* LongitudeAndLatitude.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongitudeAndLatitude.swift; sourceTree = "<group>"; };
 		DACCCC5C2612F32A00EE4865 /* Double+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ex.swift"; sourceTree = "<group>"; };
+		DAF235822693EBF90057A43A /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		DAF235842693ECA30057A43A /* ScrollingMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollingMenuView.xib; sourceTree = "<group>"; };
+		DAF235882693F1C50057A43A /* ScrollingMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingMenuView.swift; sourceTree = "<group>"; };
+		DAF2358A269411A60057A43A /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		F61AABABEF3EDE1B57906FFC /* Pods-BecomeTheMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BecomeTheMaster.debug.xcconfig"; path = "Target Support Files/Pods-BecomeTheMaster/Pods-BecomeTheMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		FF6681E725C53AD60041E617 /* BecomeTheMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BecomeTheMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6681EA25C53AD60041E617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -380,8 +388,10 @@
 		FF98943925C655B30021F8AF /* Follow */ = {
 			isa = PBXGroup;
 			children = (
-				FF98943A25C655B30021F8AF /* FollowViewController.swift */,
 				FF98943B25C655B30021F8AF /* Follow.storyboard */,
+				FF98943A25C655B30021F8AF /* FollowViewController.swift */,
+				DAF2358A269411A60057A43A /* UserProfileViewController.swift */,
+				DAB8690F269540E000EB642C /* UserProfileAboutViewController.swift */,
 			);
 			path = Follow;
 			sourceTree = "<group>";
@@ -419,12 +429,14 @@
 		FF98944A25C655B30021F8AF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FF98944925C655B30021F8AF /* Utils.swift */,
 				FF98944825C655B30021F8AF /* ViewControllerFromStoryboard.swift */,
 				FF98944B25C655B30021F8AF /* BaseViewController.swift */,
-				FF98944925C655B30021F8AF /* Utils.swift */,
-				DA6E733F26704A3700C2DBC3 /* City.txt */,
+				DAF235822693EBF90057A43A /* MenuView.swift */,
 				DA0AFCDC2675DF660069484A /* TableBasicSectionView.xib */,
 				DA0AFCDE2675DF7A0069484A /* TableBasicSectionView.swift */,
+				DAF235842693ECA30057A43A /* ScrollingMenuView.xib */,
+				DAF235882693F1C50057A43A /* ScrollingMenuView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -493,7 +505,6 @@
 				FF98946425C655B30021F8AF /* Contract.storyboard in Resources */,
 				FF6681F725C53AD70041E617 /* LaunchScreen.storyboard in Resources */,
 				DA72C39425DB4F3A0096ABC5 /* Localized.strings in Resources */,
-				DA6E734026704A3700C2DBC3 /* City.txt in Resources */,
 				FF98945125C655B30021F8AF /* Messenger.storyboard in Resources */,
 				FF98940025C654890021F8AF /* Color.xcassets in Resources */,
 				FF9893FF25C654890021F8AF /* Assets.xcassets in Resources */,
@@ -501,6 +512,7 @@
 				DA288FD325DCD87900B293B6 /* GoogleService-Info.plist in Resources */,
 				FF98944D25C655B30021F8AF /* Main.storyboard in Resources */,
 				FF98945325C655B30021F8AF /* Setting.storyboard in Resources */,
+				DAF235852693ECA30057A43A /* ScrollingMenuView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +572,7 @@
 				DA288FB225DCAF4800B293B6 /* UIImage+Ex.swift in Sources */,
 				DA41181625DF4C60007A1BE5 /* StarRateView.swift in Sources */,
 				FF6681EB25C53AD60041E617 /* AppDelegate.swift in Sources */,
+				DAB86910269540E000EB642C /* UserProfileAboutViewController.swift in Sources */,
 				DA41186125DF5B75007A1BE5 /* RightToLeft.swift in Sources */,
 				DA41181225DF3B33007A1BE5 /* MainFilterViewController.swift in Sources */,
 				DA9AA682266EF72B0077A8E1 /* Category+Field.swift in Sources */,
@@ -576,6 +589,7 @@
 				FF98945925C655B30021F8AF /* CALayer+Ex.swift in Sources */,
 				FF98944F25C655B30021F8AF /* TabBarController.swift in Sources */,
 				FF8A7FA625E0E7D7005931A7 /* StarRateText.swift in Sources */,
+				DAF235892693F1C50057A43A /* ScrollingMenuView.swift in Sources */,
 				DAA5FD4F2615898B00805689 /* UIView+Ex.swift in Sources */,
 				FF98946625C655B30021F8AF /* Utils.swift in Sources */,
 				FF98946225C655B30021F8AF /* SignUpReactor.swift in Sources */,
@@ -591,6 +605,7 @@
 				FF98945425C655B30021F8AF /* Router.swift in Sources */,
 				DA41184525DF549C007A1BE5 /* StarRateTouch.swift in Sources */,
 				FF98945D25C655B30021F8AF /* SignUpViewController.swift in Sources */,
+				DAF2358B269411A60057A43A /* UserProfileViewController.swift in Sources */,
 				DA75159726009D540093B800 /* API.swift in Sources */,
 				DA41183725DF4E82007A1BE5 /* StarRateSettings.swift in Sources */,
 				DA6B6577261172CA00D761D6 /* App.swift in Sources */,
@@ -602,6 +617,7 @@
 				DA3BCEF725C7D7CE00687DC9 /* UITextField+Rx.swift in Sources */,
 				FF98945225C655B30021F8AF /* SettingViewController.swift in Sources */,
 				FF98945525C655B30021F8AF /* Auth+Rx.swift in Sources */,
+				DAF235832693EBF90057A43A /* MenuView.swift in Sources */,
 				DA41184825DF54BB007A1BE5 /* StarRating.swift in Sources */,
 				DA0AFCDF2675DF7A0069484A /* TableBasicSectionView.swift in Sources */,
 				FF98946125C655B30021F8AF /* SelectLoginViewController.swift in Sources */,
